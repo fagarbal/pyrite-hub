@@ -8,7 +8,7 @@ export class GithubStrategy extends Strategy {
     super({
         clientID: "418982f1c3f826bfeef7",
         clientSecret: "591e3e6f26bc3a6b314c3c1d405d6fe7c7550c5c",
-        callbackURL: "http://localhost:8080/github/callback"
+        callbackURL: "http://localhost:8080/auth/github/callback"
     },
       async (accessToken, refreshToken, profile, done) => await this.verify(accessToken, refreshToken, profile, done)
     );

@@ -10,8 +10,8 @@ import { BitbucketMiddleware } from './bitbucket.middleware';
 export class BitbucketModule {
 	configure(consumer: MiddlewaresConsumer): void {
         consumer.apply(BitbucketMiddleware).forRoutes(
-            { path: '/bitbucket', method: RequestMethod.GET },
-            { path: '/bitbucket/callback', method: RequestMethod.GET }
+            { path: '/auth/bitbucket', method: RequestMethod.GET },
+            { path: '/auth/bitbucket/callback', method: RequestMethod.GET }
         );
     }
 }

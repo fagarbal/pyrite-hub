@@ -10,8 +10,8 @@ import { GithubMiddleware } from './github.middleware';
 export class GithubModule {
 	configure(consumer: MiddlewaresConsumer): void {
         consumer.apply(GithubMiddleware).forRoutes(
-            { path: '/github', method: RequestMethod.GET },
-            { path: '/github/callback', method: RequestMethod.GET }
+            { path: '/auth/github', method: RequestMethod.GET },
+            { path: '/auth/github/callback', method: RequestMethod.GET }
         );
     }
 }

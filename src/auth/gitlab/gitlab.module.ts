@@ -10,8 +10,8 @@ import { GitlabMiddleware } from './gitlab.middleware';
 export class GitlabModule {
 	configure(consumer: MiddlewaresConsumer): void {
         consumer.apply(GitlabMiddleware).forRoutes(
-            { path: '/gitlab', method: RequestMethod.GET },
-            { path: '/gitlab/callback', method: RequestMethod.GET }
+            { path: '/auth/gitlab', method: RequestMethod.GET },
+            { path: '/auth/gitlab/callback', method: RequestMethod.GET }
         );
     }
 }

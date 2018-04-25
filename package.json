@@ -19,10 +19,15 @@
     "@nestjs/microservices": "^4.5.8",
     "@nestjs/testing": "^4.5.5",
     "@nestjs/websockets": "^4.5.8",
-    "reflect-metadata": "^0.1.12",
+    "mysql": "^2.15.0",
     "passport": "^0.4.0",
+    "passport-bitbucket": "^2.0.0",
+    "passport-bitbucket-oauth2": "^0.1.2",
     "passport-github": "^1.1.0",
+    "passport-gitlab2": "^3.0.0",
+    "reflect-metadata": "^0.1.12",
     "rxjs": "^5.5.6",
+    "typeorm": "^0.2.0",
     "typescript": "^2.6.2"
   },
   "devDependencies": {

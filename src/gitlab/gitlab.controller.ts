@@ -1,9 +1,9 @@
 import { Get, Controller, Param, Res, Req, Next, Middleware } from '@nestjs/common';
 
-@Controller("github")
-export class GithubController {
+@Controller("gitlab")
+export class GitlabController {
 	@Get("/callback")
-	async githubCallback(@Req() req, @Res() res, @Next() next) {
+	async gitlabCallback(@Req() req, @Res() res, @Next() next) {
 		res.redirect('/');
 	}
 }

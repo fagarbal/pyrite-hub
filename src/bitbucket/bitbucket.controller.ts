@@ -1,9 +1,9 @@
 import { Get, Controller, Param, Res, Req, Next, Middleware } from '@nestjs/common';
 
-@Controller("github")
-export class GithubController {
+@Controller("bitbucket")
+export class BitbucketController {
 	@Get("/callback")
-	async githubCallback(@Req() req, @Res() res, @Next() next) {
+	async bitbucketCallback(@Req() req, @Res() res, @Next() next) {
 		res.redirect('/');
 	}
 }

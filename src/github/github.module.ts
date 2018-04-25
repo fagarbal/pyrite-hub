@@ -1,12 +1,11 @@
 import { Module, MiddlewaresConsumer, RequestMethod } from '@nestjs/common';
 import { GithubController } from './github.controller';
-import { GithubService } from './github.component';
+import { GithubStrategy } from './github.component';
 import { GithubMiddleware } from './github.middleware';
 
 @Module({
-	imports: [],
 	controllers: [GithubController],
-	components: [GithubService],
+	components: [GithubStrategy],
 })
 export class GithubModule {
 	configure(consumer: MiddlewaresConsumer): void {

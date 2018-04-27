@@ -7,5 +7,30 @@
 </head>
 <body>
     <example-component color="red"></example-component>
+
+    <button id="github-button">Github</button>
+    <button id="gitlab-button">Gitlab</button>
+    <button id="bitbucket-button">Bitbucket</button>
+
+
+    <script>
+        const githubButton = document.getElementById('github-button');
+        const gitlabButton = document.getElementById('gitlab-button');
+        const bitbucketButton = document.getElementById('bitbucket-button');
+
+        function socialEvent(button, name) {
+            button.addEventListener('click', () => {
+                const popup = window.open('/auth/' + name,'','scrollbars=yes,menubar=no,resizable=yes,toolbar=no,location=no,status=no');
+                popup.addEventListener('message', (e) => {
+                    console.log(e.data);
+                });
+            });
+        }
+
+        socialEvent(githubButton, 'github');
+        socialEvent(gitlabButton, 'gitlab');
+        socialEvent(bitbucketButton, 'bitbucket');
+
+    </script>
 </body>
 </html>

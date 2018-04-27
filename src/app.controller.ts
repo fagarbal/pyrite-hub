@@ -7,4 +7,9 @@ export class AppController {
 	root(@Res() res) {
 		res.sendFile(path.resolve("./public/index.html"));
 	}
+
+	@Get('close')
+	close(@Res() res) {
+		res.sendFile(path.resolve("./public/close.html"));
+	}
 }

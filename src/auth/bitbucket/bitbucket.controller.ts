@@ -4,6 +4,6 @@ import { Get, Controller, Param, Res, Req, Next, Middleware } from '@nestjs/comm
 export class BitbucketController {
 	@Get("/callback")
 	async bitbucketCallback(@Req() req, @Res() res, @Next() next) {
-		res.redirect('/');
+		res.redirect('/close?auth=bitbucket');
 	}
 }

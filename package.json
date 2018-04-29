@@ -5,10 +5,10 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write \"**/*.ts\"",
-    "start": "NODE_PATH=. ts-node -r tsconfig-paths/register src/main.ts",
-    "start:dev": "NODE_PATH=. nodemon",
-    "prestart:prod": "rm -rf dist && NODE_PATH=. tsc",
-    "start:prod": "NODE_PATH=. node dist/main.js",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "nodemon",
+    "prestart:prod": "rm -rf dist && tsc",
+    "start:prod": "node dist/main.js",
     "test": "jest",
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json"
@@ -19,6 +19,8 @@
     "@nestjs/microservices": "^4.5.8",
     "@nestjs/testing": "^4.5.5",
     "@nestjs/websockets": "^4.5.8",
+    "dotenv": "^5.0.1",
+    "express-handlebars": "^3.0.0",
     "mysql": "^2.15.0",
     "passport": "^0.4.0",
     "passport-bitbucket": "^2.0.0",

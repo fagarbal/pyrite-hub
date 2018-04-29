@@ -15,22 +15,22 @@ let ComponentsService = class ComponentsService {
     }
     readFile(version, component) {
         return new Promise((resolve) => {
-            fs.readFile(this.folder + "/" + component + "/" + version + "/index.js", (err, file) => {
+            fs.readFile(this.folder + '/' + component + '/' + version + '/index.js', (err, file) => {
                 if (err)
-                    return resolve("console.warn('Component " + component + "@" + version + " does not exist');");
+                    return resolve('console.warn(\'Component ' + component + '@' + version + ' does not exist\');');
                 resolve(file);
             });
         });
     }
     getComponents(component) {
-        const componentParam = component.split(",");
+        const componentParam = component.split(',');
         const files = componentParam.map((component) => {
-            const [componentName, version] = component.split("@");
+            const [componentName, version] = component.split('@');
             if (!version)
-                return this.readFile("latest", componentName);
+                return this.readFile('latest', componentName);
             return this.readFile(version, componentName);
         });
-        return Promise.all(files).then((files) => files.join(""));
+        return Promise.all(files).then((files) => files.join(''));
     }
 };
 ComponentsService = __decorate([

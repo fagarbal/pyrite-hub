@@ -21,40 +21,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const github_component_1 = require("./github.component");
-const passport = require("passport");
-let GithubController = class GithubController {
-    constructor(githubService) {
-        this.githubService = githubService;
-    }
-    login(req, res, next) {
+let GitlabController = class GitlabController {
+    gitlabCallback(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
-            return passport.authenticate('github').call({}, req, res, next);
-        });
-    }
-    githubCallback(req, res, next) {
-        return __awaiter(this, void 0, void 0, function* () {
-            res.redirect('/');
+            res.render('close-popup', {
+                origin: 'gitlab'
+            });
         });
     }
 };
 __decorate([
-    common_1.Get("/"),
+    common_1.Get('/callback'),
     __param(0, common_1.Req()), __param(1, common_1.Res()), __param(2, common_1.Next()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object, Object]),
     __metadata("design:returntype", Promise)
-], GithubController.prototype, "login", null);
-__decorate([
-    common_1.Get("/callback"),
-    __param(0, common_1.Req()), __param(1, common_1.Res()), __param(2, common_1.Next()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object, Object]),
-    __metadata("design:returntype", Promise)
-], GithubController.prototype, "githubCallback", null);
-GithubController = __decorate([
-    common_1.Controller("github"),
-    __metadata("design:paramtypes", [github_component_1.GithubService])
-], GithubController);
-exports.GithubController = GithubController;
-//# sourceMappingURL=github.controller.js.map
+], GitlabController.prototype, "gitlabCallback", null);
+GitlabController = __decorate([
+    common_1.Controller('auth/gitlab')
+], GitlabController);
+exports.GitlabController = GitlabController;
+//# sourceMappingURL=gitlab.controller.js.map

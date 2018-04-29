@@ -1,9 +1,11 @@
 import { Get, Controller, Param, Res, Req, Next, Middleware } from '@nestjs/common';
 
-@Controller("auth/gitlab")
+@Controller('auth/gitlab')
 export class GitlabController {
-	@Get("/callback")
+	@Get('/callback')
 	async gitlabCallback(@Req() req, @Res() res, @Next() next) {
-		res.redirect('/close?auth=gitlab');
+		res.render('close-popup', {
+			origin: 'gitlab'
+		});
 	}
 }

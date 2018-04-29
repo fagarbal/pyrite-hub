@@ -13,10 +13,9 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const path = require("path");
 let AppController = class AppController {
     root(res) {
-        res.sendFile(path.resolve("./public/index.html"));
+        res.render('main');
     }
 };
 __decorate([

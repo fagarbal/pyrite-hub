@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
 export class User {
@@ -8,42 +8,57 @@ export class User {
 	@Column()
 	username: string;
 
-	@OneToMany(type => Social, social => social)
-	socialAccounts: Social[];
-	
+	@Column()
+	password: string;
+
+	@OneToMany(type => UserSocial, social => social)
+	socialAccounts: UserSocial[];
+
 	@OneToMany(type => Component, component => component.user)
-    components: Component[];
+	components: Component[];
+
+	@CreateDateColumn()
+	createdOn: Date;
+
+	@UpdateDateColumn()
+	updatedOn: Date;
 }
 
-type SocialNames = "github" | "gitlab" | "bitbucket";
+type SocialNames = 'github' | 'gitlab' | 'bitbucket';
 
 @Entity()
-export class Social {
+export class UserSocial {
 	@PrimaryGeneratedColumn()
 	id: number;
-	
+
 	@Column({
-		type: "enum",
+		type: 'enum',
 		enum: [
-			"github",
-			"gitlab",
-			"bitbucket"
+			'github',
+			'gitlab',
+			'bitbucket'
 		]
 	})
 	name: SocialNames;
 
 	@Column()
-	social_id: string;
+	socialId: string;
 
 	@Column()
-    social_token: string;
+	socialToken: string;
+
+	@CreateDateColumn()
+	createdOn: Date;
+
+	@UpdateDateColumn()
+	updatedOn: Date;
 }
 
 @Entity()
 export class Component {
 	@PrimaryGeneratedColumn()
 	id: number;
-	
+
 	@Column()
 	name: string;
 
@@ -51,5 +66,11 @@ export class Component {
 	version: string;
 
 	@ManyToOne(type => User, user => user.components)
-    user: User;
+	user: User;
+
+	@CreateDateColumn()
+	createdOn: Date;
+
+	@UpdateDateColumn()
+	updatedOn: Date;
 }

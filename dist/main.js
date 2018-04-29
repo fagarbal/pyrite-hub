@@ -8,23 +8,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv = require("dotenv");
+const exphbs = require("express-handlebars");
 const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
-const passport = require("passport");
-const passport_github_1 = require("passport-github");
+const passport_init_1 = require("./passport.init");
+dotenv.load();
 function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
-        passport.use(new passport_github_1.Strategy({
-            clientID: "418982f1c3f826bfeef7",
-            clientSecret: "591e3e6f26bc3a6b314c3c1d405d6fe7c7550c5c",
-            callbackURL: "http://localhost:8080/github/callback"
-        }, (accessToken, refreshToken, profile, cb) => {
-            console.log("accessToken", accessToken);
-            console.log("refreshToken", refreshToken);
-            console.log("profile", profile);
-            return cb(null, profile);
+        passport_init_1.initPassport(app);
+        app.engine('handlebars', exphbs({
+            defaultLayout: __dirname + '/templates/default'
         }));
+        app.set('views', __dirname + '/templates');
+        app.set('view engine', 'handlebars');
         yield app.listen(8080);
     });
 }

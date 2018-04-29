@@ -28,21 +28,21 @@ let ComponentsController = class ComponentsController {
     }
     getComponents(res, componentsParam) {
         return __awaiter(this, void 0, void 0, function* () {
-            res.header("Content-Type", "application/javascript");
+            res.header('Content-Type', 'application/javascript');
             const components = yield this.componentsService.getComponents(componentsParam);
             res.send(components);
         });
     }
 };
 __decorate([
-    common_1.Get(":components"),
-    __param(0, common_1.Res()), __param(1, common_1.Param("components")),
+    common_1.Get(':components'),
+    __param(0, common_1.Res()), __param(1, common_1.Param('components')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, String]),
     __metadata("design:returntype", Promise)
 ], ComponentsController.prototype, "getComponents", null);
 ComponentsController = __decorate([
-    common_1.Controller("components"),
+    common_1.Controller('components'),
     __metadata("design:paramtypes", [components_component_1.ComponentsService])
 ], ComponentsController);
 exports.ComponentsController = ComponentsController;

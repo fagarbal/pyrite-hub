@@ -1,1 +1,0 @@
-{"version":3,"file":"github.module.js","sourceRoot":"","sources":["../../src/github/github.module.ts"],"names":[],"mappings":";;;;;;;;AAAA,2CAAwC;AACxC,2DAAuD;AACvD,yDAAmD;AAOnD,IAAa,YAAY,GAAzB;CAA6B,CAAA;AAAhB,YAAY;IALxB,eAAM,CAAC;QACP,OAAO,EAAE,EAAE;QACX,WAAW,EAAE,CAAC,oCAAgB,CAAC;QAC/B,UAAU,EAAE,CAAC,gCAAa,CAAC;KAC3B,CAAC;GACW,YAAY,CAAI;AAAhB,oCAAY"}

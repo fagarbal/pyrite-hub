@@ -7,16 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const github_controller_1 = require("./github.controller");
-const github_component_1 = require("./github.component");
-let GithubModule = class GithubModule {
+const github_module_1 = require("./github/github.module");
+const gitlab_module_1 = require("./gitlab/gitlab.module");
+const bitbucket_module_1 = require("./bitbucket/bitbucket.module");
+let AuthModule = class AuthModule {
 };
-GithubModule = __decorate([
+AuthModule = __decorate([
     common_1.Module({
-        imports: [],
-        controllers: [github_controller_1.GithubController],
-        components: [github_component_1.GithubService],
+        imports: [github_module_1.GithubModule, gitlab_module_1.GitlabModule, bitbucket_module_1.BitbucketModule],
     })
-], GithubModule);
-exports.GithubModule = GithubModule;
-//# sourceMappingURL=github.module.js.map
+], AuthModule);
+exports.AuthModule = AuthModule;
+//# sourceMappingURL=auth.module.js.map

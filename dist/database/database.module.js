@@ -7,10 +7,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-let GithubService = class GithubService {
+const database_providers_1 = require("./database.providers");
+let DatabaseModule = class DatabaseModule {
 };
-GithubService = __decorate([
-    common_1.Component()
-], GithubService);
-exports.GithubService = GithubService;
-//# sourceMappingURL=github.component.js.map
+DatabaseModule = __decorate([
+    common_1.Module({
+        components: [...database_providers_1.databaseProviders],
+        exports: [...database_providers_1.databaseProviders],
+    })
+], DatabaseModule);
+exports.DatabaseModule = DatabaseModule;
+//# sourceMappingURL=database.module.js.map

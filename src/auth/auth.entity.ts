@@ -65,6 +65,12 @@ export class Component {
 	@Column()
 	version: string;
 
+	@Column('text')
+	readme: string;
+
+	@Column()
+	repo: string;
+
 	@ManyToOne(type => User, user => user.components)
 	user: User;
 

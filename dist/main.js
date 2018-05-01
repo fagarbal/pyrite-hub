@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv = require("dotenv");
 const exphbs = require("express-handlebars");
+const express = require("express");
 const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
 const passport_init_1 = require("./passport.init");
@@ -23,6 +24,7 @@ function bootstrap() {
         }));
         app.set('views', __dirname + '/templates');
         app.set('view engine', 'handlebars');
+        app.use('/static', express.static(__dirname + '/static'));
         yield app.listen(8080);
     });
 }

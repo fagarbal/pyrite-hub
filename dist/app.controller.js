@@ -15,7 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 let AppController = class AppController {
     root(res) {
-        res.render('main');
+        res.render('main', {
+            cards: Array(15).fill(0)
+        });
     }
 };
 __decorate([

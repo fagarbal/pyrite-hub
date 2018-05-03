@@ -19,7 +19,7 @@
   ],
   "exclude": [
     "node_modules",
-    "src/static",
+    "src/public",
     "**/*.spec.ts"
   ]
 }

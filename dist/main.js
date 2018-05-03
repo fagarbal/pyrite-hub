@@ -9,22 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv = require("dotenv");
-const exphbs = require("express-handlebars");
-const express = require("express");
+const session = require("express-session");
 const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
 const passport_init_1 = require("./passport.init");
-dotenv.load();
+const render_init_1 = require("./render.init");
 function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
+        dotenv.load();
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
-        passport_init_1.initPassport(app);
-        app.engine('handlebars', exphbs({
-            defaultLayout: __dirname + '/templates/default'
+        app.use(session({
+            secret: process.env.SESSION_TOKEN,
+            resave: true,
+            saveUninitialized: true
         }));
-        app.set('views', __dirname + '/templates');
-        app.set('view engine', 'handlebars');
-        app.use('/static', express.static(__dirname + '/static'));
+        passport_init_1.initPassport(app);
+        render_init_1.initRender(app);
         yield app.listen(8080);
     });
 }

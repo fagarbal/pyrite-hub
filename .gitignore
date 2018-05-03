@@ -389,3 +389,6 @@ Temporary Items
 # Local
 dokcer-compose.yml
 .env
+
+# MariaDB storage test
+.storage

@@ -96,6 +96,14 @@ __decorate([
     __metadata("design:type", String)
 ], Component.prototype, "version", void 0);
 __decorate([
+    typeorm_1.Column('text'),
+    __metadata("design:type", String)
+], Component.prototype, "readme", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], Component.prototype, "repo", void 0);
+__decorate([
     typeorm_1.ManyToOne(type => User, user => user.components),
     __metadata("design:type", User)
 ], Component.prototype, "user", void 0);

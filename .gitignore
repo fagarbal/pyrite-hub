@@ -392,3 +392,5 @@ dokcer-compose.yml
 
 # MariaDB storage test
 .storage
+
+.dist

@@ -15,11 +15,11 @@
     "baseUrl": "./"
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "pages/**/*"
   ],
   "exclude": [
     "node_modules",
-    "src/public",
     "**/*.spec.ts"
   ]
 }

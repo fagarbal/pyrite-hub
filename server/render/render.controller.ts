@@ -1,8 +1,8 @@
 import { Get, Controller, Res, Req } from '@nestjs/common';
-import { nextApp } from './main';
+import { nextApp } from '../main';
 
 @Controller()
-export class AppController {
+export class RenderController {
 	handle: any = nextApp.getRequestHandler();
 
 	@Get('/')

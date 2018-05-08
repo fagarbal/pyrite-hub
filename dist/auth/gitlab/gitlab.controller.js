@@ -16,7 +16,9 @@ const common_1 = require("@nestjs/common");
 const close_script_1 = require("../close-script");
 let GitlabController = class GitlabController {
     async bitbucketCallback(res) {
-        res.send(close_script_1.default('gitlab'));
+        const response = close_script_1.default('gitlab');
+        res.set('Content-Type', 'text/html');
+        res.send(new Buffer(response));
     }
 };
 __decorate([

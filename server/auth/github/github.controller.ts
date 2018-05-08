@@ -6,8 +6,7 @@ export class GithubController {
 	@Get('/callback')
 	async githubCallback(@Res() res) {
 		const response = closeScript('github');
-		console.log("sddasdsadsadsadsadas")
-		console.log(response);
-		return res.send(response);
+		res.set('Content-Type', 'text/html');
+		res.send(new Buffer(response));
 	}
 }

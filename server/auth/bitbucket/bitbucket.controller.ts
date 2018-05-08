@@ -5,6 +5,8 @@ import closeScript from '../close-script';
 export class BitbucketController {
 	@Get('/callback')
 	async bitbucketCallback(@Res() res) {
-		res.send(closeScript('bitbucket'));
+		const response = closeScript('bitbucket');
+		res.set('Content-Type', 'text/html');
+		res.send(new Buffer(response));
 	}
 }

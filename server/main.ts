@@ -25,8 +25,6 @@ async function bootstrap() {
 
 	const app = await NestFactory.create(AppModule, server as any);
 
-	// app.setGlobalPrefix('api');
-
 	app.use(session({
 		secret: process.env.SESSION_SECRET,
 		resave: true,
@@ -34,8 +32,6 @@ async function bootstrap() {
 	}));
 
 	initPassport(app);
-
-	await app.init();
 
 	await app.listen(process.env.PORT || 8080);
 }

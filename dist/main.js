@@ -17,14 +17,12 @@ async function bootstrap() {
     await nextApp.prepare();
     const server = express();
     const app = await core_1.NestFactory.create(app_module_1.AppModule, server);
-    // app.setGlobalPrefix('api');
     app.use(session({
         secret: process.env.SESSION_SECRET,
         resave: true,
         saveUninitialized: true
     }));
     passport_init_1.initPassport(app);
-    await app.init();
     await app.listen(process.env.PORT || 8080);
 }
 bootstrap();

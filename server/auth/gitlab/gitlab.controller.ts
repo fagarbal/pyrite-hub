@@ -5,6 +5,8 @@ import closeScript from '../close-script';
 export class GitlabController {
 	@Get('/callback')
 	async bitbucketCallback(@Res() res) {
-		res.send(closeScript('gitlab'));
+		const response = closeScript('gitlab');
+		res.set('Content-Type', 'text/html');
+		res.send(new Buffer(response));
 	}
 }

@@ -13,23 +13,36 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const close_script_1 = require("../close-script");
-let GithubController = class GithubController {
-    async githubCallback(res) {
-        const response = close_script_1.default('github');
-        res.set('Content-Type', 'text/html');
-        res.send(new Buffer(response));
+const main_1 = require("../main");
+let RenderController = class RenderController {
+    constructor() {
+        this.handle = main_1.nextApp.getRequestHandler();
+    }
+    index(req, res) {
+        return main_1.nextApp.render(req, res, '/', {
+            cards: Array(15).fill(0)
+        });
+    }
+    all(req, res) {
+        return this.handle(req, res);
     }
 };
 __decorate([
-    common_1.Get('/callback'),
-    __param(0, common_1.Res()),
+    common_1.Get('/'),
+    __param(0, common_1.Req()), __param(1, common_1.Res()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], GithubController.prototype, "githubCallback", null);
-GithubController = __decorate([
-    common_1.Controller('auth/github')
-], GithubController);
-exports.GithubController = GithubController;
-//# sourceMappingURL=github.controller.js.map
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], RenderController.prototype, "index", null);
+__decorate([
+    common_1.Get('*'),
+    __param(0, common_1.Req()), __param(1, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], RenderController.prototype, "all", null);
+RenderController = __decorate([
+    common_1.Controller()
+], RenderController);
+exports.RenderController = RenderController;
+//# sourceMappingURL=render.controller.js.map

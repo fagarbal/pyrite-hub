@@ -16,7 +16,9 @@ const common_1 = require("@nestjs/common");
 const close_script_1 = require("../close-script");
 let BitbucketController = class BitbucketController {
     async bitbucketCallback(res) {
-        res.send(close_script_1.default('bitbucket'));
+        const response = close_script_1.default('bitbucket');
+        res.set('Content-Type', 'text/html');
+        res.send(new Buffer(response));
     }
 };
 __decorate([

@@ -13,11 +13,10 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const close_script_1 = require("../close-script");
 let GitlabController = class GitlabController {
     async bitbucketCallback(res) {
-        res.render('close-popup', {
-            origin: 'gitlab'
-        });
+        res.send(close_script_1.default('gitlab'));
     }
 };
 __decorate([

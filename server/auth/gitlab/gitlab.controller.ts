@@ -1,11 +1,10 @@
 import { Get, Controller, Res } from '@nestjs/common';
+import closeScript from '../close-script';
 
 @Controller('auth/gitlab')
 export class GitlabController {
 	@Get('/callback')
 	async bitbucketCallback(@Res() res) {
-		res.render('close-popup', {
-			origin: 'gitlab'
-		});
+		res.send(closeScript('gitlab'));
 	}
 }

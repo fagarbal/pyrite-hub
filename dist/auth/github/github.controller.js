@@ -15,8 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const close_script_1 = require("../close-script");
 let GithubController = class GithubController {
-    async bitbucketCallback(res) {
-        res.send(close_script_1.default('github'));
+    async githubCallback(res) {
+        const response = close_script_1.default('github');
+        console.log("sddasdsadsadsadsadas");
+        console.log(response);
+        return res.send(response);
     }
 };
 __decorate([
@@ -25,7 +28,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], GithubController.prototype, "bitbucketCallback", null);
+], GithubController.prototype, "githubCallback", null);
 GithubController = __decorate([
     common_1.Controller('auth/github')
 ], GithubController);

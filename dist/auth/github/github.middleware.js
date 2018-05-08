@@ -10,6 +10,7 @@ const common_1 = require("@nestjs/common");
 const passport = require("passport");
 let GithubMiddleware = class GithubMiddleware {
     resolve() {
+        console.log("middleware");
         return passport.authenticate('github', { failureRedirect: '/github' });
     }
 };

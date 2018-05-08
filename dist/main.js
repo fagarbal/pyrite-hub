@@ -25,7 +25,7 @@ async function bootstrap() {
     }));
     passport_init_1.initPassport(app);
     await app.init();
-    await app.listen(8080);
+    await app.listen(process.env.PORT || 8080);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

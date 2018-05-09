@@ -6,4 +6,4 @@ import { RenderModule } from './render/render.module';
 @Module({
 	imports: [AuthModule, ComponentsModule, RenderModule]
 })
-export class AppModule { }
+export class AppModule {}

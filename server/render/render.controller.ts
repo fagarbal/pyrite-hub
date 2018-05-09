@@ -8,7 +8,7 @@ export class RenderController {
 	@Get('/')
 	index(@Req() req, @Res() res) {
 		return this.renderService.next.render(req, res, '/', {
-			cards: Array(15).fill(0)
+			cards: Array(6).fill(0)
 		});
 	}
 
@@ -17,5 +17,13 @@ export class RenderController {
 		return this.renderService.next.render(req, res, '/component', {
 			name: req.params.name
 		});
+	}
+	
+	@Get('/_next/*') next(@Req() req, @Res() res) {
+		return this.renderService.handle(req, res);
+	}
+
+	@Get('/static/*') static(@Req() req, @Res() res) {
+		return this.renderService.handle(req, res);
 	}
 }

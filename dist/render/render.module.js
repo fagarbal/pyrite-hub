@@ -8,12 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const render_controller_1 = require("./render.controller");
 const render_component_1 = require("./render.component");
-const render_middleware_1 = require("./render.middleware");
 const common_1 = require("@nestjs/common");
 let RenderModule = class RenderModule {
-    configure(consumer) {
-        consumer.apply(render_middleware_1.RenderMiddleware).forRoutes('/_next', '/static');
-    }
 };
 RenderModule = __decorate([
     common_1.Module({

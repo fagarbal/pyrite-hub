@@ -20,13 +20,19 @@ let RenderController = class RenderController {
     }
     index(req, res) {
         return this.renderService.next.render(req, res, '/', {
-            cards: Array(15).fill(0)
+            cards: Array(6).fill(0)
         });
     }
     component(req, res) {
         return this.renderService.next.render(req, res, '/component', {
             name: req.params.name
         });
+    }
+    next(req, res) {
+        return this.renderService.handle(req, res);
+    }
+    static(req, res) {
+        return this.renderService.handle(req, res);
     }
 };
 __decorate([
@@ -43,6 +49,18 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", void 0)
 ], RenderController.prototype, "component", null);
+__decorate([
+    common_1.Get('/_next/*'), __param(0, common_1.Req()), __param(1, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], RenderController.prototype, "next", null);
+__decorate([
+    common_1.Get('/static/*'), __param(0, common_1.Req()), __param(1, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], RenderController.prototype, "static", null);
 RenderController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [render_component_1.RenderService])

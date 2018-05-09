@@ -17,8 +17,7 @@ let RenderMiddleware = class RenderMiddleware {
     }
     resolve() {
         return (req, res) => {
-            console.log(req.originalUrl);
-            return this.renderService.handle(req, res, req.originalUrl);
+            return this.renderService.handle(req, res);
         };
     }
 };

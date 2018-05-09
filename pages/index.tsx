@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardHeader, CardBody, CardTitle, CardText, CardFooter, CardColumns, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
 
 const CardComponent = () => (
-	<a href="/component/example-component">
 		<Card>
-			<CardBody>
-			<CardTitle><u>component-name</u></CardTitle>
-			<CardText>Sort description of what the component do and some usage information.</CardText>
-			</CardBody>
+			<a href="/component/example-component">
+				<CardBody>
+					<CardTitle>component-name</CardTitle>
+					<CardText>Sort description of what the component do and some usage information.</CardText>
+				</CardBody>
+			</a>
 			<CardFooter>
 				<span>username</span>
 				<button type="button" className="btn btn-outline-secondary btn-sm float-right ml-1" onClick={this.toggleModal}>
@@ -18,7 +19,6 @@ const CardComponent = () => (
 				</button>
 			</CardFooter>
       	</Card>
-	</a>
 );
 
 interface IndexProps {
@@ -102,15 +102,13 @@ export default class extends Component<IndexProps, IndexState> {
 					<Collapse isOpen={!this.state.collapsed} navbar>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
-								<button className="btn btn-outline-secondary mr-2">Sign in</button>
-							</NavItem>
-							<NavItem>
 								<button type="button" className="btn btn-outline-secondary" onClick={this.toggleModal}>Log in</button>
 							</NavItem>
 						</Nav>
 					</Collapse>
 				</Navbar>
 				<div className="container mt-4">
+				<h6 className="mb-3">Featured components:</h6>
 					<CardColumns>
 						{this.props.cards.map((e, k) => <CardComponent key={k} />)}
 					</CardColumns>

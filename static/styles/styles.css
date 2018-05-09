@@ -3,6 +3,12 @@ a {
     color: black;
 }
 
+a:hover h5{
+    text-decoration: underline;
+    text-underline-position: under;
+    color: black;
+}
+
 a:hover {
     text-decoration: none;
     color: black;

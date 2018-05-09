@@ -1,15 +1,24 @@
 import React, { Component } from 'react'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardHeader, CardBody, CardTitle, CardText, CardFooter, CardColumns } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardHeader, CardBody, CardTitle, CardText, CardFooter, CardColumns, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
 
 const CardComponent = () => (
-	<Card>
-        <CardBody>
-          <CardTitle>Special Title Treatment</CardTitle>
-          <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-          <Button>Go somewhere</Button>
-        </CardBody>
-        <CardFooter>Footer</CardFooter>
-      </Card>
+	<a href="/component/example-component">
+		<Card>
+			<CardBody>
+			<CardTitle><u>component-name</u></CardTitle>
+			<CardText>Sort description of what the component do and some usage information.</CardText>
+			</CardBody>
+			<CardFooter>
+				<span>username</span>
+				<button type="button" className="btn btn-outline-secondary btn-sm float-right ml-1" onClick={this.toggleModal}>
+					20 <i className="fa fa-eye"></i>
+				</button>
+				<button type="button" className="btn btn-outline-secondary btn-sm float-right" onClick={this.toggleModal}>
+					1 <i className="fas fa-heart"></i>
+				</button>
+			</CardFooter>
+      	</Card>
+	</a>
 );
 
 interface IndexProps {
@@ -18,7 +27,8 @@ interface IndexProps {
 }
 
 interface IndexState {
-    modal?: boolean;
+	modal?: boolean;
+	collapsed?: boolean;
 }
 
 export default class extends Component<IndexProps, IndexState> {
@@ -32,10 +42,12 @@ export default class extends Component<IndexProps, IndexState> {
 		super(props);
 
 		this.state = {
-			modal: false
+			modal: false,
+			collapsed: true
 		};
 
-		this.toggle = this.toggle.bind(this);
+		this.toggleModal = this.toggleModal.bind(this);
+		this.toggleNavbar = this.toggleNavbar.bind(this);
 	}
 
 	componentDidMount() {
@@ -52,51 +64,52 @@ export default class extends Component<IndexProps, IndexState> {
 		});
 	}
 
-	toggle() {
+	toggleModal() {
 		this.setState({
 			modal: !this.state.modal
+		});
+	}
+
+	toggleNavbar() {
+		this.setState({
+			collapsed: !this.state.collapsed
 		});
 	}
 
 	render() {
 		return (
 			<div>
-				<Modal isOpen={this.state.modal} toggle={this.toggle} centered={true} backdrop="static">
-					<ModalHeader toggle={this.toggle}>Login Method</ModalHeader>
-					<ModalBody>
-						<button className="btn btn-outline-secondary" onClick={() => this.openSocialPopUp('github')}>
+				<Modal isOpen={this.state.modal} toggle={this.toggleModal} centered={true} backdrop="static">
+					<ModalHeader toggle={this.toggleModal}>Login Method</ModalHeader>
+					<ModalBody className="m-auto">
+						<button className="btn btn-secondary" onClick={() => this.openSocialPopUp('github')}>
 							Github <i className="fab fa-github"></i>
-						</button> <button className="btn btn-outline-secondary" onClick={() => this.openSocialPopUp('gitlab')}>
+						</button> <button className="btn btn-secondary" onClick={() => this.openSocialPopUp('gitlab')}>
 							Gitlab <i className="fab fa-gitlab"></i>
-						</button> <button className="btn btn-outline-secondary" onClick={() => this.openSocialPopUp('bitbucket')}>
+						</button> <button className="btn btn-secondary" onClick={() => this.openSocialPopUp('bitbucket')}>
 							Bitbucket <i className="fab fa-bitbucket"></i>
 						</button>
 					</ModalBody>
 					<ModalFooter>
-						<Button color="secondary" onClick={this.toggle}>Cancel</Button>
+						<Button color="danger" onClick={this.toggleModal}>Cancel</Button>
 					</ModalFooter>
 				</Modal>
-				<nav className="navbar navbar-expand-lg navbar-light">
-					<a className="navbar-brand" href="#">
-						<b>Pyrite</b>
-						<img src="/static/images/logo.png" width="32" height="32"></img>
-					</a>
-
-					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-						aria-expanded="false" aria-label="Toggle navigation">
-						<span className="navbar-toggler-icon"></span>
-					</button>
-
-					<div className="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul className="navbar-nav mr-auto"></ul>
-						<form className="form-inline my-2 my-lg-0">
-							<input className="form-control mr-0 mr-sm-2 mb-2 mb-sm-0" type="search" placeholder="Search" aria-label="Search"></input>
-							<button className="btn btn-outline-success mr-2" type="submit">Search</button>
-							<button className="btn btn-outline-primary mr-2">Sign in</button>
-							<button type="button" className="btn btn-outline-primary" onClick={this.toggle}>Log in</button>
-						</form>
-					</div>
-				</nav>
+				<Navbar color="faded" light expand="xs">
+					<NavbarBrand href="/" className="mr-auto">
+						<b>Pyrite</b> <img src="/static/images/logo.png" width="32" height="32"></img>
+					</NavbarBrand>
+					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+					<Collapse isOpen={!this.state.collapsed} navbar>
+						<Nav className="ml-auto" navbar>
+							<NavItem>
+								<button className="btn btn-outline-secondary mr-2">Sign in</button>
+							</NavItem>
+							<NavItem>
+								<button type="button" className="btn btn-outline-secondary" onClick={this.toggleModal}>Log in</button>
+							</NavItem>
+						</Nav>
+					</Collapse>
+				</Navbar>
 				<div className="container mt-4">
 					<CardColumns>
 						{this.props.cards.map((e, k) => <CardComponent key={k} />)}

@@ -10,7 +10,7 @@ const common_1 = require("@nestjs/common");
 const fs = require("fs");
 let ComponentsService = class ComponentsService {
     constructor() {
-        this.folder = '../components';
+        this.folder = './components';
     }
     readFile(version, component) {
         return new Promise((resolve) => {

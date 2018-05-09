@@ -3,7 +3,7 @@ import * as fs from 'fs';
 
 @Injectable()
 export class ComponentsService {
-    private readonly folder = '../components';
+    private readonly folder = './components';
 
     private readFile(version, component) {
         return new Promise((resolve) => {

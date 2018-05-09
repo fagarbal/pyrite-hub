@@ -3,8 +3,7 @@ import { ComponentsController } from './components.controller';
 import { ComponentsService } from './components.component';
 
 @Module({
-	imports: [],
 	controllers: [ComponentsController],
-	components: [ComponentsService],
+	providers: [ComponentsService],
 })
 export class ComponentsModule { }

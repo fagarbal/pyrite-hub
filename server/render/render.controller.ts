@@ -1,19 +1,21 @@
 import { Get, Controller, Res, Req } from '@nestjs/common';
-import { nextApp } from '../main';
+import { RenderService } from './render.component';
 
 @Controller()
 export class RenderController {
-	handle: any = nextApp.getRequestHandler();
+	constructor(private readonly renderService: RenderService) { }
 
 	@Get('/')
 	index(@Req() req, @Res() res) {
-		return nextApp.render(req, res, '/', {
+		return this.renderService.next.render(req, res, '/', {
 			cards: Array(15).fill(0)
 		});
 	}
-	
-	@Get('*')
-	all(@Req() req, @Res() res) {
-		return this.handle(req, res);
-	}	
+
+	@Get('/component/:name')
+	component(@Req() req, @Res() res) {
+		return this.renderService.next.render(req, res, '/component', {
+			name: req.params.name
+		});
+	}
 }

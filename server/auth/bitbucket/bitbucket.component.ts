@@ -1,8 +1,8 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import * as passport from 'passport';
 import { Strategy } from 'passport-bitbucket-oauth2';
 
-@Component()
+@Injectable()
 export class BitbucketStrategy extends Strategy {
 	constructor() {
 		super({

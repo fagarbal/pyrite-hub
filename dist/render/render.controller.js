@@ -13,18 +13,20 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const main_1 = require("../main");
+const render_component_1 = require("./render.component");
 let RenderController = class RenderController {
-    constructor() {
-        this.handle = main_1.nextApp.getRequestHandler();
+    constructor(renderService) {
+        this.renderService = renderService;
     }
     index(req, res) {
-        return main_1.nextApp.render(req, res, '/', {
+        return this.renderService.next.render(req, res, '/', {
             cards: Array(15).fill(0)
         });
     }
-    all(req, res) {
-        return this.handle(req, res);
+    component(req, res) {
+        return this.renderService.next.render(req, res, '/component', {
+            name: req.params.name
+        });
     }
 };
 __decorate([
@@ -35,14 +37,15 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], RenderController.prototype, "index", null);
 __decorate([
-    common_1.Get('*'),
+    common_1.Get('/component/:name'),
     __param(0, common_1.Req()), __param(1, common_1.Res()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", void 0)
-], RenderController.prototype, "all", null);
+], RenderController.prototype, "component", null);
 RenderController = __decorate([
-    common_1.Controller()
+    common_1.Controller(),
+    __metadata("design:paramtypes", [render_component_1.RenderService])
 ], RenderController);
 exports.RenderController = RenderController;
 //# sourceMappingURL=render.controller.js.map

@@ -27,7 +27,7 @@ let GithubStrategy = class GithubStrategy extends passport_github_1.Strategy {
     }
 };
 GithubStrategy = __decorate([
-    common_1.Component(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [])
 ], GithubStrategy);
 exports.GithubStrategy = GithubStrategy;

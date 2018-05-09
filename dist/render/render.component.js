@@ -7,15 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const components_module_1 = require("./component/components.module");
-const auth_module_1 = require("./auth/auth.module");
-const render_module_1 = require("./render/render.module");
-let AppModule = class AppModule {
+const next = require("next");
+let RenderService = class RenderService {
+    async onModuleInit() {
+        this.next = next({
+            dev: process.env.NODE_ENV !== 'production'
+        });
+        this.handle = this.next.getRequestHandler();
+        await this.next.prepare();
+    }
 };
-AppModule = __decorate([
-    common_1.Module({
-        imports: [auth_module_1.AuthModule, components_module_1.ComponentsModule, render_module_1.RenderModule]
-    })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+RenderService = __decorate([
+    common_1.Injectable()
+], RenderService);
+exports.RenderService = RenderService;
+//# sourceMappingURL=render.component.js.map

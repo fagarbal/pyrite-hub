@@ -1,8 +1,8 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Strategy } from 'passport-github';
 import * as passport from 'passport';
 
-@Component()
+@Injectable()
 export class GithubStrategy extends Strategy {
 	constructor() {
 		super({

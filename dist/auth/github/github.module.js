@@ -12,13 +12,13 @@ const github_component_1 = require("./github.component");
 const github_middleware_1 = require("./github.middleware");
 let GithubModule = class GithubModule {
     configure(consumer) {
-        consumer.apply(github_middleware_1.GithubMiddleware).forRoutes({ path: '/auth/github', method: common_1.RequestMethod.GET }, { path: '/auth/github/callback', method: common_1.RequestMethod.GET });
+        consumer.apply(github_middleware_1.GithubMiddleware).forRoutes('/auth/github', '/auth/github/callback');
     }
 };
 GithubModule = __decorate([
     common_1.Module({
         controllers: [github_controller_1.GithubController],
-        components: [github_component_1.GithubStrategy],
+        providers: [github_component_1.GithubStrategy]
     })
 ], GithubModule);
 exports.GithubModule = GithubModule;

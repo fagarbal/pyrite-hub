@@ -40,11 +40,11 @@
     "docker:up:background": "docker-compose up -d"
   },
   "dependencies": {
-    "@nestjs/common": "^4.5.9",
-    "@nestjs/core": "^4.5.10",
-    "@nestjs/microservices": "^4.5.8",
-    "@nestjs/testing": "^4.5.5",
-    "@nestjs/websockets": "^4.5.8",
+    "@nestjs/common": "5.0.0-rc.3",
+    "@nestjs/core": "5.0.0-rc.3",
+    "@nestjs/microservices": "5.0.0-rc.3",
+    "@nestjs/testing": "5.0.0-rc.3",
+    "@nestjs/websockets": "5.0.0-rc.3",
     "@types/dotenv": "^4.0.3",
     "@zeit/next-typescript": "^0.1.1",
     "copy-webpack-plugin": "^4.5.1",

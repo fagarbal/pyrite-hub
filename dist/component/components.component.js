@@ -33,7 +33,7 @@ let ComponentsService = class ComponentsService {
     }
 };
 ComponentsService = __decorate([
-    common_1.Component()
+    common_1.Injectable()
 ], ComponentsService);
 exports.ComponentsService = ComponentsService;
 //# sourceMappingURL=components.component.js.map

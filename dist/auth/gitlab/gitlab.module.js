@@ -12,13 +12,13 @@ const gitlab_component_1 = require("./gitlab.component");
 const gitlab_middleware_1 = require("./gitlab.middleware");
 let GitlabModule = class GitlabModule {
     configure(consumer) {
-        consumer.apply(gitlab_middleware_1.GitlabMiddleware).forRoutes({ path: '/auth/gitlab', method: common_1.RequestMethod.GET }, { path: '/auth/gitlab/callback', method: common_1.RequestMethod.GET });
+        consumer.apply(gitlab_middleware_1.GitlabMiddleware).forRoutes('/auth/gitlab', '/auth/gitlab/callback');
     }
 };
 GitlabModule = __decorate([
     common_1.Module({
         controllers: [gitlab_controller_1.GitlabController],
-        components: [gitlab_component_1.GitlabStrategy],
+        providers: [gitlab_component_1.GitlabStrategy],
     })
 ], GitlabModule);
 exports.GitlabModule = GitlabModule;

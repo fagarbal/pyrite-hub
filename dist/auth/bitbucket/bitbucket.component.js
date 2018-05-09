@@ -27,7 +27,7 @@ let BitbucketStrategy = class BitbucketStrategy extends passport_bitbucket_oauth
     }
 };
 BitbucketStrategy = __decorate([
-    common_1.Component(),
+    common_1.Injectable(),
     __metadata("design:paramtypes", [])
 ], BitbucketStrategy);
 exports.BitbucketStrategy = BitbucketStrategy;

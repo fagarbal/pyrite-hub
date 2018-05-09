@@ -12,13 +12,13 @@ const bitbucket_component_1 = require("./bitbucket.component");
 const bitbucket_middleware_1 = require("./bitbucket.middleware");
 let BitbucketModule = class BitbucketModule {
     configure(consumer) {
-        consumer.apply(bitbucket_middleware_1.BitbucketMiddleware).forRoutes({ path: '/auth/bitbucket', method: common_1.RequestMethod.GET }, { path: '/auth/bitbucket/callback', method: common_1.RequestMethod.GET });
+        consumer.apply(bitbucket_middleware_1.BitbucketMiddleware).forRoutes('/auth/bitbucket', '/auth/bitbucket/callback');
     }
 };
 BitbucketModule = __decorate([
     common_1.Module({
         controllers: [bitbucket_controller_1.BitbucketController],
-        components: [bitbucket_component_1.BitbucketStrategy],
+        providers: [bitbucket_component_1.BitbucketStrategy]
     })
 ], BitbucketModule);
 exports.BitbucketModule = BitbucketModule;

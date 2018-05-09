@@ -1,9 +1,9 @@
-import { Middleware, NestMiddleware, ExpressMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware } from '@nestjs/common';
 import * as passport from 'passport';
 
-@Middleware()
+@Injectable()
 export class GitlabMiddleware implements NestMiddleware {
-	resolve(): ExpressMiddleware {
+	resolve() {
 		return passport.authenticate('gitlab', { failureRedirect: '/gitlab' });
 	}
 }

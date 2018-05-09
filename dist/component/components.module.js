@@ -13,9 +13,8 @@ let ComponentsModule = class ComponentsModule {
 };
 ComponentsModule = __decorate([
     common_1.Module({
-        imports: [],
         controllers: [components_controller_1.ComponentsController],
-        components: [components_component_1.ComponentsService],
+        providers: [components_component_1.ComponentsService],
     })
 ], ComponentsModule);
 exports.ComponentsModule = ComponentsModule;

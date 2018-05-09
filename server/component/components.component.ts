@@ -1,7 +1,7 @@
-import { Component } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import * as fs from 'fs';
 
-@Component()
+@Injectable()
 export class ComponentsService {
     private readonly folder = process.env.NODE_PATH + '/components';
 

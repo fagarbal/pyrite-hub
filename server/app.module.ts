@@ -4,8 +4,6 @@ import { AuthModule } from './auth/auth.module';
 import { RenderModule } from './render/render.module';
 
 @Module({
-	imports: [AuthModule, ComponentsModule, RenderModule],
-	controllers: [],
-	components: [],
+	imports: [AuthModule, ComponentsModule, RenderModule]
 })
 export class AppModule { }

@@ -1,8 +1,15 @@
 import { RenderController } from './render.controller';
-import { Module } from '@nestjs/common';
+import { RenderService } from './render.component';
+import { RenderMiddleware } from './render.middleware';
+import { Module, MiddlewareConsumer } from '@nestjs/common';
 
 @Module({
 	controllers: [RenderController],
-	components: [],
+	providers: [RenderService]
 })
-export class RenderModule { }
+export class RenderModule {
+	configure(consumer: MiddlewareConsumer): void {
+        consumer.apply(RenderMiddleware).forRoutes('/_next', '/static');
+	}
+	
+}

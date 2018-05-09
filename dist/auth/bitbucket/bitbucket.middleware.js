@@ -14,7 +14,7 @@ let BitbucketMiddleware = class BitbucketMiddleware {
     }
 };
 BitbucketMiddleware = __decorate([
-    common_1.Middleware()
+    common_1.Injectable()
 ], BitbucketMiddleware);
 exports.BitbucketMiddleware = BitbucketMiddleware;
 //# sourceMappingURL=bitbucket.middleware.js.map

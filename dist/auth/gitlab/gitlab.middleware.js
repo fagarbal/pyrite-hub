@@ -14,7 +14,7 @@ let GitlabMiddleware = class GitlabMiddleware {
     }
 };
 GitlabMiddleware = __decorate([
-    common_1.Middleware()
+    common_1.Injectable()
 ], GitlabMiddleware);
 exports.GitlabMiddleware = GitlabMiddleware;
 //# sourceMappingURL=gitlab.middleware.js.map

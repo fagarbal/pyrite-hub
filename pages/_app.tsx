@@ -6,7 +6,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import fetch from 'node-fetch';
 import { createHttpLink } from 'apollo-link-http';
 
-const link = createHttpLink({ uri: 'http://pyritehub.com/graphql', fetch: fetch });
+const link = createHttpLink({ uri: 'http://www.pyritehub.com/graphql', fetch: fetch });
 
 const client = new ApolloClient({
     link,

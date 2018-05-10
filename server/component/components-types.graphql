@@ -1,10 +1,10 @@
 type Component {
-	id: Int
+	id: String
 	tag: String
 	username: String
 	description: String
-	likes: String
-	views: String
+	likes: Int
+	views: Int
 }
 
 type Query {

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import * as fs from 'fs';
 
 @Injectable()
-export class ComponentsService {
+export class ComponentsFile {
     private readonly folder = './components';
 
     private readFile(version, component) {

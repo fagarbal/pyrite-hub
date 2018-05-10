@@ -394,7 +394,7 @@ dokcer-compose.yml
 .storage
 
 .dist
-./dist
+dist
 .next
 
 production-server

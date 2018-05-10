@@ -1,5 +1,5 @@
 type Component {
-	id: String
+	id: Int
 	tag: String
 	username: String
 	description: String

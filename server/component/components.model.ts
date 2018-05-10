@@ -2,7 +2,7 @@ import { prop, Typegoose } from "typegoose";
 
 export class Component extends Typegoose {
     @prop()
-    id: string;
+    id: number;
 
     @prop()
     tag: string;

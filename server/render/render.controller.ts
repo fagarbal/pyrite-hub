@@ -5,16 +5,6 @@ import { RenderService } from './render.component';
 export class RenderController {
 	constructor(private readonly renderService: RenderService) { }
 
-	@Get('*')
-	redirect(@Req() req, @Res() res) {
-		res.redirect('https://' + req.headers.host + req.url);
-	}
-
-	@Get('/.well-known/acme-challenge/n4wqpEbIMzLmJ2gCPXT3LVZdYj48I4AbOQAko8fUzwE')
-	cert(@Res() res) {
-		res.send('n4wqpEbIMzLmJ2gCPXT3LVZdYj48I4AbOQAko8fUzwE.ANQNq26JYdjS2-yT_KGykpfqvuPJw2WM6ZTJUrPBTTA')
-	}
-
 	@Get('/')
 	index(@Req() req, @Res() res) {
 		return this.renderService.next.render(req, res, '/', {

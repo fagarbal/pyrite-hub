@@ -18,12 +18,6 @@ let RenderController = class RenderController {
     constructor(renderService) {
         this.renderService = renderService;
     }
-    redirect(req, res) {
-        res.redirect('https://' + req.headers.host + req.url);
-    }
-    cert(res) {
-        res.send('n4wqpEbIMzLmJ2gCPXT3LVZdYj48I4AbOQAko8fUzwE.ANQNq26JYdjS2-yT_KGykpfqvuPJw2WM6ZTJUrPBTTA');
-    }
     index(req, res) {
         return this.renderService.next.render(req, res, '/', {
             cards: Array(6).fill(0)
@@ -41,20 +35,6 @@ let RenderController = class RenderController {
         return this.renderService.handle(req, res);
     }
 };
-__decorate([
-    common_1.Get('*'),
-    __param(0, common_1.Req()), __param(1, common_1.Res()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", void 0)
-], RenderController.prototype, "redirect", null);
-__decorate([
-    common_1.Get('/.well-known/acme-challenge/n4wqpEbIMzLmJ2gCPXT3LVZdYj48I4AbOQAko8fUzwE'),
-    __param(0, common_1.Res()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], RenderController.prototype, "cert", null);
 __decorate([
     common_1.Get('/'),
     __param(0, common_1.Req()), __param(1, common_1.Res()),

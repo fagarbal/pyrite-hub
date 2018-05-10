@@ -47,7 +47,7 @@ const components = [{
 @Resolver('Component')
 export class ComponentResolver {
 	@Query()
-	getAll() {
+	components() {
 		return components;
 	}
 }

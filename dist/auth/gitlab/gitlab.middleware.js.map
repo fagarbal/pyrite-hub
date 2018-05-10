@@ -1,1 +1,0 @@
-{"version":3,"file":"gitlab.middleware.js","sourceRoot":"","sources":["../../../server/auth/gitlab/gitlab.middleware.ts"],"names":[],"mappings":";;;;;;;;AAAA,2CAA4D;AAC5D,qCAAqC;AAGrC,IAAa,gBAAgB,GAA7B;IACC,OAAO;QACN,OAAO,QAAQ,CAAC,YAAY,CAAC,QAAQ,EAAE,EAAE,eAAe,EAAE,SAAS,EAAE,CAAC,CAAC;IACxE,CAAC;CACD,CAAA;AAJY,gBAAgB;IAD5B,mBAAU,EAAE;GACA,gBAAgB,CAI5B;AAJY,4CAAgB"}

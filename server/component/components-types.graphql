@@ -8,5 +8,5 @@ type Component {
 }
 
 type Query {
-	getAll: [Component]
+	components: [Component]
 }

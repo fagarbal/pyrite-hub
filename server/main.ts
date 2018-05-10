@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv';
-import * as session from 'express-session';
+dotenv.load();	
 
+import * as session from 'express-session';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { initPassport } from './passport.init';
@@ -8,8 +9,6 @@ import * as compression from 'compression';
 
 
 async function bootstrap() {
-	dotenv.load();	
-
 	const app = await NestFactory.create(AppModule);
 	app.use(compression());
 

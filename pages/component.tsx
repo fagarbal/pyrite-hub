@@ -22,7 +22,7 @@ export default class extends Component<any> {
 				<pre>{`
 <html>
 	<head>
-		<script src="http://www.pyritehub.com/components/`+this.props.name+`></script>
+		<script src="http://www.pyritehub.com/components/`+this.props.name+`"></script>
 	</head>
 	<body>
 		<`+this.props.name+`></`+this.props.name+`>

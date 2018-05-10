@@ -9,6 +9,6 @@ import { GithubMiddleware } from './github.middleware';
 })
 export class GithubModule {
 	configure(consumer: MiddlewareConsumer): void {
-		consumer.apply(GithubMiddleware).forRoutes('/auth/github', '/auth/github/callback');
+		consumer.apply(GithubMiddleware).forRoutes(GithubController);
 	}
 }

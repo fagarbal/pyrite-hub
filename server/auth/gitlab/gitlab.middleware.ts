@@ -4,6 +4,6 @@ import * as passport from 'passport';
 @Injectable()
 export class GitlabMiddleware implements NestMiddleware {
 	resolve() {
-		return passport.authenticate('gitlab', { failureRedirect: '/gitlab' });
+		return passport.authenticate('gitlab', { failureRedirect: '/?logged=error' });
 	}
 }

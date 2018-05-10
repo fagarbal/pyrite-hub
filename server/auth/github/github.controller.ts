@@ -2,8 +2,12 @@ import { Get, Controller, Res } from '@nestjs/common';
 
 @Controller('auth/github')
 export class GithubController {
+	@Get('/')
+	github() {}
+
 	@Get('/callback')
-	async githubCallback(@Res() res) {
+	githubCallback(@Res() res) {
+		console.log("entra");
 		res.redirect('/?logged=true');
 	}
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Highlight from 'react-highlight.js'
 export default class extends Component<any> {
 	static async getInitialProps({ query: { name } }) {
 		return { name: name }
@@ -19,16 +19,17 @@ export default class extends Component<any> {
 				<b>Example</b>
 				<br/>
 
-				<pre>{`
-<html>
+				<Highlight language='html'>
+				{
+`<html>
 	<head>
 		<script src="http://www.pyritehub.com/components/`+this.props.name+`"></script>
 	</head>
 	<body>
 		<`+this.props.name+`></`+this.props.name+`>
 	</body>
-</html>
-				`}</pre>
+</html>`}
+				</Highlight>
 			</div>
 		)
 	}

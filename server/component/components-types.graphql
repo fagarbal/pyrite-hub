@@ -1,0 +1,12 @@
+type Component {
+	id: Int
+	tag: String
+	username: String
+	description: String
+	likes: String
+	views: String
+}
+
+type Query {
+	getAll: [Component]
+}

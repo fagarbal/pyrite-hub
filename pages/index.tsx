@@ -1,25 +1,61 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardHeader, CardBody, CardTitle, CardText, CardFooter, CardColumns, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
 
-const CardComponent = () => (
-		<Card>
-			<a href="/component/example-component">
-				<CardBody>
-					<CardTitle>component-name</CardTitle>
-					<CardText>Sort description of what the component do and some usage information.</CardText>
-				</CardBody>
-			</a>
-			<CardFooter>
-				<span>username</span>
-				<button type="button" className="btn btn-outline-secondary btn-sm float-right ml-1" onClick={this.toggleModal}>
-					20 <i className="fa fa-eye"></i>
-				</button>
-				<button type="button" className="btn btn-outline-secondary btn-sm float-right" onClick={this.toggleModal}>
-					1 <i className="fas fa-heart"></i>
-				</button>
-			</CardFooter>
-      	</Card>
-);
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+
+const query = gql`
+	query Component {
+		getAll {
+			id
+			tag
+			username
+			description
+			likes
+			views
+		}
+	}
+`;
+
+const withComponents = graphql(query, {
+	props: ({ data }) => ({ ...data }),
+})
+
+const Components = withComponents((props: any) => {
+	if (props.loading) return (
+		<div>
+			<b>
+				<span>Loading </span> <i className="fa fa-spinner fa-spin"></i>
+			</b>
+		</div>
+	);
+
+	return (
+		<CardColumns>
+			{props.getAll.map((component) => (
+				<Card key={component.id}>
+					<a href="/component/example-component">
+						<CardBody>
+							<CardTitle>{component.tag}</CardTitle>
+							<CardText>{component.description}</CardText>
+						</CardBody>
+					</a>
+					<CardFooter>
+						<button type="button" className="btn btn-outline-secondary btn-sm">
+							{component.username} <i className="fa fa-user"></i>
+						</button>
+						<button type="button" className="btn btn-outline-danger btn-sm float-right ml-1">
+							{component.likes} <i className="fas fa-heart"></i>
+						</button>
+						<button type="button" className="btn btn-outline-secondary btn-sm float-right">
+							{component.views} <i className="fa fa-eye"></i>
+						</button>	
+					</CardFooter>
+				</Card>
+			))}
+		</CardColumns>
+	);
+});
 
 interface IndexProps {
 	cards: Array<any>;
@@ -31,7 +67,7 @@ interface IndexState {
 	collapsed?: boolean;
 }
 
-export default class extends Component<IndexProps, IndexState> {
+class IndexComponent extends Component<IndexProps, IndexState> {
 	static async getInitialProps({ query: { cards, modal } }) {
 		return {
 			cards: cards,
@@ -96,7 +132,7 @@ export default class extends Component<IndexProps, IndexState> {
 				</Modal>
 				<Navbar color="faded" light expand="xs">
 					<NavbarBrand href="/" className="mr-auto">
-						<b>Pyrite</b> <img src="/static/images/logo.png" width="32" height="32"></img>
+						<b>pyrite</b> <img src="/static/images/logo.png" width="26" height="26"></img> <b>hub</b>
 					</NavbarBrand>
 					<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
 					<Collapse isOpen={!this.state.collapsed} navbar>
@@ -109,11 +145,11 @@ export default class extends Component<IndexProps, IndexState> {
 				</Navbar>
 				<div className="container mt-4">
 				<h6 className="mb-3">Featured components:</h6>
-					<CardColumns>
-						{this.props.cards.map((e, k) => <CardComponent key={k} />)}
-					</CardColumns>
+					<Components></Components>
 				</div>
 			</div>
 		)
 	}
 }
+
+export default IndexComponent;

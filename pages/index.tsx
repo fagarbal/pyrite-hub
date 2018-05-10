@@ -34,7 +34,7 @@ const Components = withComponents((props: any) => {
 		<CardColumns>
 			{props.getAll.map((component) => (
 				<Card key={component.id}>
-					<a href="/component/example-component">
+					<a href={"/component/" + component.tag}>
 						<CardBody>
 							<CardTitle>{component.tag}</CardTitle>
 							<CardText>{component.description}</CardText>

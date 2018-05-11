@@ -1,3 +1,14 @@
+html, body {
+    color: #343a40;
+}
+
+hr {
+    margin-right: 4rem;
+    margin-left: 4rem;
+    color: lightgray;
+    margin-top: 3rem;
+  }
+
 a {
     text-decoration: none;
     color: black;
@@ -35,6 +46,7 @@ a:hover {
 }
 
 .header {
+    margin-top: -1rem;
     z-index: -1;
     min-height: 30rem;
     display: block;
@@ -50,7 +62,8 @@ a:hover {
 
 .header-title {
     position: relative;
-    margin: 5rem auto;
+    margin: 1rem auto;
+    top: 4rem; 
     color: #FFFFFF;
     max-width: 26rem;
 }
@@ -61,7 +74,11 @@ a:hover {
 }
 
 .navbar{
-   z-index: 1;
+    z-index: 1;
+    webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+    background-color: rgba(0,0,0,.2);
 }
 
 .btn-outline-primary:hover {
@@ -92,22 +109,22 @@ a:hover {
 
 .container {
     padding: 1.5rem;
-    border-radius: 2px;
-    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
 }
 
 .over-header {
     position: relative;
-    background-color: #FFFFFF;
-    margin-top: -10rem !important;
+    background-color: transparent;
+    margin-top: -8rem !important;
+    box-shadow: none;
 }
 
 .info-card-icon {
     font-size: 80px;
-    color: #000000;
+    color: #03DAC6;
     text-align: center;
 }
 
 .centered {
     margin: 0 auto;
+    text-align: center;
 }

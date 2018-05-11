@@ -23,7 +23,7 @@ export default function (this: Dashboard) {
                 </ModalFooter>
             </Modal>
             <div className="header">
-                <Navbar className="navbar" color="faded" light expand="xs">
+                <Navbar className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" color="faded" light expand="xs">
                     <NavbarBrand href="/" className="mr-auto">
                         <b>pyrite</b> <img src="/static/images/logo.png" width="26" height="26"></img> <b>hub</b>
                     </NavbarBrand>
@@ -44,13 +44,15 @@ export default function (this: Dashboard) {
             <div className="container over-header mt-4">
                 <section className="row">
                     <CardDeck className="centered">
-                        <InfoCard></InfoCard>
-                        <InfoCard></InfoCard>
-                        <InfoCard></InfoCard>
+                        <InfoCard icon="fa-blind" text="The help you need to build your website, just the way you need it"></InfoCard>
+                        <InfoCard icon="fa-tachometer-alt" text="Web development, modular and faster than ever before"></InfoCard>
+                        <InfoCard icon="fa-briefcase" text="Profesional web components, created and mantained by our community"></InfoCard>
                     </CardDeck>
                 </section>
             </div>
+            <hr />
             <div className="container mt-4">
+                <h1 className="mb-3 section-title centered"><i className="fas fa-crown"></i>Featured components</h1>
                 <Components></Components>
             </div>
         </div>

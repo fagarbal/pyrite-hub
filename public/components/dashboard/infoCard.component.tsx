@@ -2,14 +2,15 @@ import React from 'react';
 import { Card, CardTitle, CardBody, CardText, CardImg } from 'reactstrap';
 
 export const InfoCard = (props) => {
+  console.log(props)
   return (
     <div className="col-md-4 col-sm-1">
       <Card inverse>
         <CardBody>
           <CardTitle></CardTitle>
-          <CardText className="info-card-icon"><i className="fas fa-tachometer-alt"></i></CardText>
+          <CardText className="info-card-icon"><i className={`fas ${props.icon}`}></i></CardText>
           <CardText>
-            <small className="text-muted">Web development, fastest than ever.</small>
+            <small className="text-muted">{props.text}</small>
           </CardText>
         </CardBody>
       </Card>

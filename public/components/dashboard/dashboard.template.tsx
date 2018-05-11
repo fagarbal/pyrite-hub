@@ -1,50 +1,8 @@
 import React from 'react';
 import Dashboard from './dasboard.component';
-<<<<<<< HEAD
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Card, CardBody, CardTitle, CardText, CardFooter, CardColumns, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
-import { withComponents } from '../../queries/component.query';
-
-const Components = withComponents(({loading, components}: any ) => {
-	if (loading) return (
-		<div>
-			<b>
-				<span>Loading </span> <i className="fa fa-spinner fa-spin"></i>
-			</b>
-		</div>
-	);
-
-	return (
-		<CardColumns>
-			{components.map((component) => (
-				<Card key={component._id}>
-					<a href={"/component/" + component.tag}>
-						<CardBody>
-							<CardTitle>{component.tag}</CardTitle>
-							<CardText>{component.description}</CardText>
-						</CardBody>
-					</a>
-					<CardFooter>
-						<button type="button" className="btn btn-outline-secondary btn-sm">
-							{component.username} <i className="fa fa-user"></i>
-						</button>
-						<button type="button" className="btn btn-outline-danger btn-sm float-right ml-1">
-							{component.likes} <i className="fas fa-heart"></i>
-						</button>
-						<button type="button" className="btn btn-outline-secondary btn-sm float-right">
-							{component.views} <i className="fa fa-eye"></i>
-						</button>	
-					</CardFooter>
-				</Card>
-			))}
-		</CardColumns>
-	);
-});
-
-=======
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, CardDeck } from 'reactstrap';
 import { Components } from './componentList.component';
 import { InfoCard } from './infoCard.component';
->>>>>>> styles
 export default function (this: Dashboard) {
     return (
         <div>

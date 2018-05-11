@@ -12,7 +12,9 @@
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "analyze": "./node_modules/.bin/cross-env ANALYZE=1 npm run build",
-    "dev": "npm run build && NODE_ENV=development node dist/main.js -p $PORT",
+    "dev": "npm run build && NODE_ENV=development nodemon dist/main.js -p $PORT",
+    "watch": "webpack --config webpack.config.js",
+    "dev:watch": "concurrently \"npm run watch\"  \"npm run dev\"",
     "postbuild": "cp -r static .next/",
     "clean": "rm -rf .next/",
     "build": "npm run clean && next build && tsc --project tsconfig.server.json",
@@ -55,6 +57,7 @@
     "apollo-link-http": "^1.5.4",
     "apollo-server-express": "^1.3.6",
     "compression": "^1.7.2",
+    "concurrently": "^3.5.1",
     "copy-webpack-plugin": "^4.5.1",
     "dotenv": "^5.0.1",
     "express-handlebars": "^3.0.0",
@@ -85,8 +88,9 @@
     "ts-loader": "^3.5.0",
     "typeorm": "^0.2.0",
     "typescript": "^2.8.3",
-    "webpack": "^4.6.0",
-    "webpack-cli": "^2.1.2"
+    "webpack": "3.5.0",
+    "webpack-cli": "^2.1.2",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "@types/express": "^4.0.39",
@@ -99,6 +103,7 @@
     "@zeit/next-source-maps": "0.0.2",
     "jest": "^21.2.1",
     "nodemon": "^1.14.1",
+    "npm-run-all": "^4.1.3",
     "prettier": "^1.11.1",
     "supertest": "^3.0.0",
     "ts-jest": "^21.2.4",

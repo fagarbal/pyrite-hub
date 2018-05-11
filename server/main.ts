@@ -7,7 +7,6 @@ import { AppModule } from './app.module';
 import { initPassport } from './passport.init';
 import * as compression from 'compression';
 
-
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 	app.use(compression());
@@ -15,7 +14,7 @@ async function bootstrap() {
 	app.use(session({
 		secret: process.env.SESSION_SECRET,
 		resave: true,
-		saveUninitialized: true
+		saveUninitialized: true 
 	}));
 
 	initPassport(app);

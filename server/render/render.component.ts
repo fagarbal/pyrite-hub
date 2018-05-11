@@ -13,7 +13,6 @@ export class RenderService {
         });
 
         this.handle = this.next.getRequestHandler();
-
         await this.next.prepare();
     }
 }

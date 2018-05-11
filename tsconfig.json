@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "es2016",
-    "module": "commonjs",
+    "module": "esnext",
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",

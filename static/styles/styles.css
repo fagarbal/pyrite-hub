@@ -101,3 +101,13 @@ a:hover {
     background-color: #FFFFFF;
     margin-top: -10rem !important;
 }
+
+.info-card-icon {
+    font-size: 80px;
+    color: #000000;
+    text-align: center;
+}
+
+.centered {
+    margin: 0 auto;
+}

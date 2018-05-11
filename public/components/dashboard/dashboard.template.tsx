@@ -43,7 +43,7 @@ export default function (this: Dashboard) {
             </div>
             <div className="container over-header mt-4">
                 <section className="row">
-                    <CardDeck>
+                    <CardDeck className="centered">
                         <InfoCard></InfoCard>
                         <InfoCard></InfoCard>
                         <InfoCard></InfoCard>

@@ -5,12 +5,11 @@ export const InfoCard = (props) => {
   return (
     <div className="col-md-4 col-sm-1">
       <Card inverse>
-        <CardImg top width="100%" src="https://www.whitecase.com/sites/whitecase/files/images/locations/Berlin_Tablet_1920x960.jpg" alt="Card image cap" />
         <CardBody>
-          <CardTitle>Card Title</CardTitle>
-          <CardText>Aquí ponemos cosas que estén chachis sobre PyriteHub, por qué molamos tanto y eso </CardText>
+          <CardTitle></CardTitle>
+          <CardText className="info-card-icon"><i className="fas fa-tachometer-alt"></i></CardText>
           <CardText>
-            <small className="text-muted">Y aqui no se, algo mas</small>
+            <small className="text-muted">Web development, fastest than ever.</small>
           </CardText>
         </CardBody>
       </Card>

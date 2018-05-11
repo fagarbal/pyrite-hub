@@ -1,13 +1,10 @@
-import * as dotenv from 'dotenv';
-dotenv.load();	
-
 import * as session from 'express-session';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { initPassport } from './passport.init';
 import * as compression from 'compression';
 
-async function bootstrap() {
+export async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 	app.use(compression());
 
@@ -22,4 +19,3 @@ async function bootstrap() {
 	await app.listen(process.env.PORT || 8080);
 }
 
-bootstrap();

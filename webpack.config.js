@@ -3,7 +3,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: ['webpack/hot/poll?100', './server/main.ts'],
+  entry: ['webpack/hot/poll?100', './server/server.ts'],
   watch: true,
   target: 'async-node',
   externals: [

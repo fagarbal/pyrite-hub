@@ -3,7 +3,7 @@ import * as next from 'next';
 import { ServerResponse, IncomingMessage } from 'http';
 
 @Injectable()
-export class RenderService {
+export class PagesComponent {
     next: next.Server;
     handle: (req: IncomingMessage, res: ServerResponse, parsedUrl?: next.UrlLike) => Promise<void>;
 

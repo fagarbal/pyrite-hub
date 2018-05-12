@@ -2,9 +2,9 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 const query = gql`
-	query Component {
+	query {
 		components {
-			id
+			_id
 			tag
 			username
 			description

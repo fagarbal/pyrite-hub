@@ -1,5 +1,5 @@
 import { Query, Resolver } from '@nestjs/graphql';
-import { ComponentService } from './components.service';
+import { ComponentService } from './component.service';
 
 @Resolver('Component')
 export class ComponentResolver {

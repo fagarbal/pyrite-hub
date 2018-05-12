@@ -8,24 +8,12 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
+$ npm run dev
 
 # watch mode
-$ npm run start:dev
+$ npm run dev:watch
 
 # production mode
-npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ npm run build
+$ npm start
 ```

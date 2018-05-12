@@ -1,5 +1,5 @@
 import * as session from 'express-session';
-import * as compression from 'compression';
+// mport * as compression from 'compression';
 
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -10,7 +10,8 @@ declare const module: any;
 export async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 	
-	app.use(compression());
+	// TODO: Fail with long graphql responses
+	// app.use(compression());
 
 	app.use(session({
 		secret: process.env.SESSION_SECRET,

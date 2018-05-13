@@ -4,12 +4,13 @@
       {
         "type": "node",
         "request": "launch",
-        "name": "Launch typescript",
+        "name": "debug pyritehub",
         "env": {
-            "NODE_PATH": "."
+            "NODE_ENV": "development",
+            "TS_NODE_COMPILER_OPTIONS": "{\"module\":\"commonjs\"}"
         },
         "protocol": "inspector",
-        "args": ["./src/main.ts"],
+        "args": ["./server/server.ts"],
         "cwd": "${workspaceFolder}/",
         "runtimeArgs": ["-r", "ts-node/register"],
         "internalConsoleOptions": "openOnSessionStart"

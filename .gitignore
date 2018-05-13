@@ -398,3 +398,4 @@ dist
 .next
 
 production-server
+.mongodb

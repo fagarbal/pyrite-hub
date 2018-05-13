@@ -12,40 +12,34 @@ interface IndexState {
 }
 
 class Dashboard extends Component<IndexProps, IndexState> {
-	static async getInitialProps({ query: { cards, modal } }) {
-		return {
-			cards: cards,
-			modal: modal
-		}
-	}
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			modal: false,
-			collapsed: true
+			collapsed: true,
 		};
 
 		this.toggleModal = this.toggleModal.bind(this);
-        this.toggleNavbar = this.toggleNavbar.bind(this);
-        this.render = dashboardTemplate.bind(this);
+		this.toggleNavbar = this.toggleNavbar.bind(this);
+		this.render = dashboardTemplate.bind(this);
 	}
 
 	componentDidMount() {
 		this.setState({
-			modal: this.props.modal || false
+			modal: this.props.modal || false,
 		});
-	} 
+	}
 
 	toggleModal() {
 		this.setState({
-			modal: !this.state.modal
+			modal: !this.state.modal,
 		});
 	}
 
 	toggleNavbar() {
 		this.setState({
-			collapsed: !this.state.collapsed
+			collapsed: !this.state.collapsed,
 		});
 	}
 }

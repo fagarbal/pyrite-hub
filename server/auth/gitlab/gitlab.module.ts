@@ -9,6 +9,8 @@ import { GitlabMiddleware } from './gitlab.middleware';
 })
 export class GitlabModule {
 	configure(consumer: MiddlewareConsumer): void {
-        consumer.apply(GitlabMiddleware).forRoutes('/auth/gitlab', '/auth/gitlab/callback');
-    }
+		consumer
+			.apply(GitlabMiddleware)
+			.forRoutes('/auth/gitlab', '/auth/gitlab/callback');
+	}
 }

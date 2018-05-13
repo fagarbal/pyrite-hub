@@ -3,23 +3,26 @@ import { GraphQLModule, GraphQLFactory } from '@nestjs/graphql';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 
 @Module({
-	imports: [GraphQLModule]
+	imports: [GraphQLModule],
 })
 export class GraphqlModule implements NestModule {
-	constructor(private readonly graphQLFactory: GraphQLFactory) { }
+	constructor(private readonly graphQLFactory: GraphQLFactory) {}
 
 	configure(consumer: MiddlewareConsumer) {
-		const typeDefs = this.graphQLFactory.mergeTypesByPaths('./**/*.graphql');
-		const schema = this.graphQLFactory.createSchema({ typeDefs });
-		console.log("hola")
-		if (process.env.NODE_ENV !== 'production') {
-            consumer
-			.apply(graphiqlExpress({ endpointURL: '/graphql' }))
-            .forRoutes('/graphiql')
-        }
+		const typeDefs = this.graphQLFactory.mergeTypesByPaths(
+			'./**/*.graphql',
+		);
 
-        consumer
-			.apply(graphqlExpress(req => ({ schema, rootValue: req  })))
+		const schema = this.graphQLFactory.createSchema({ typeDefs });
+
+		if (process.env.NODE_ENV !== 'production') {
+			consumer
+				.apply(graphiqlExpress({ endpointURL: '/graphql' }))
+				.forRoutes('/graphiql');
+		}
+
+		consumer
+			.apply(graphqlExpress(req => ({ schema, rootValue: req })))
 			.forRoutes('/graphql');
 	}
 }

@@ -4,6 +4,6 @@ import { Module } from '@nestjs/common';
 
 @Module({
 	controllers: [PagesController],
-	providers: [PagesComponent]
+	providers: [PagesComponent],
 })
 export class PagesModule {}

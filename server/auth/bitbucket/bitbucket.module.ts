@@ -5,10 +5,12 @@ import { BitbucketMiddleware } from './bitbucket.middleware';
 
 @Module({
 	controllers: [BitbucketController],
-	providers: [BitbucketStrategy]
+	providers: [BitbucketStrategy],
 })
 export class BitbucketModule implements NestModule {
 	configure(consumer: MiddlewareConsumer): void {
-        consumer.apply(BitbucketMiddleware).forRoutes('/auth/bitbucket', '/auth/bitbucket/callback');
-    }
+		consumer
+			.apply(BitbucketMiddleware)
+			.forRoutes('/auth/bitbucket', '/auth/bitbucket/callback');
+	}
 }

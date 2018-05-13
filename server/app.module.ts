@@ -8,7 +8,12 @@ import { GraphqlModule } from './graphql/graphql.module';
 
 @Module({
 	imports: [
-		DatabaseModule, GraphqlModule, AuthModule, ComponentsModule, FileModule, PagesModule
-	]
+		DatabaseModule,
+		GraphqlModule,
+		AuthModule,
+		ComponentsModule,
+		FileModule,
+		PagesModule,
+	],
 })
-export class AppModule {} 
+export class AppModule {}

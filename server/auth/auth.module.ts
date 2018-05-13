@@ -6,4 +6,4 @@ import { BitbucketModule } from './bitbucket/bitbucket.module';
 @Module({
 	imports: [GithubModule, GitlabModule, BitbucketModule],
 })
-export class AuthModule { }
+export class AuthModule {}

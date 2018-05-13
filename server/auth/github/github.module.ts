@@ -5,7 +5,7 @@ import { GithubMiddleware } from './github.middleware';
 
 @Module({
 	controllers: [GithubController],
-	providers: [GithubStrategy]
+	providers: [GithubStrategy],
 })
 export class GithubModule {
 	configure(consumer: MiddlewareConsumer): void {

@@ -7,7 +7,6 @@ export class GithubController {
 
 	@Get('/callback')
 	githubCallback(@Res() res) {
-		console.log("entra");
 		res.redirect('/?logged=true');
 	}
 }

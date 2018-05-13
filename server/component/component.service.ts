@@ -5,9 +5,12 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class ComponentService {
-    constructor(@InjectRepository(Component) private readonly componentRepository: Repository<Component>) {}
+	constructor(
+		@InjectRepository(Component)
+		private readonly componentRepository: Repository<Component>,
+	) {}
 
-    findAll() {
-        return this.componentRepository.find();
-    }
+	findAll() {
+		return this.componentRepository.find();
+	}
 }

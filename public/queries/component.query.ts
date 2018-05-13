@@ -16,6 +16,6 @@ const query = gql`
 
 export const withComponents = graphql(query, {
 	props: ({ data }) => {
-        return { ...data };
-    }
-})
+		return { ...data };
+	},
+});

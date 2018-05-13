@@ -3,27 +3,27 @@ import { PagesComponent } from './pages.component';
 
 @Controller()
 export class PagesController {
-	constructor(private readonly pagesComponent: PagesComponent) { }
+	constructor(private readonly pagesComponent: PagesComponent) {}
 
 	@Get('/')
 	index(@Req() req, @Res() res) {
-		return this.pagesComponent.next.render(req, res, '/', {
-			cards: Array(6).fill(0)
-		});
+		return this.pagesComponent.next.render(req, res, '/');
 	}
 
 	@Get('/component/:name')
 	component(@Req() req, @Res() res) {
 		return this.pagesComponent.next.render(req, res, '/component', {
-			name: req.params.name
+			name: req.params.name,
 		});
 	}
-	
-	@Get('/_next/*') next(@Req() req, @Res() res) {
+
+	@Get('/_next/*')
+	next(@Req() req, @Res() res) {
 		return this.pagesComponent.handle(req, res);
 	}
 
-	@Get('/static/*') static(@Req() req, @Res() res) {
+	@Get('/static/*')
+	static(@Req() req, @Res() res) {
 		return this.pagesComponent.handle(req, res);
 	}
 }

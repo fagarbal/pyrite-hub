@@ -6,12 +6,14 @@ import * as passport from 'passport';
 @Injectable()
 export class GitlabStrategy extends Strategy {
 	constructor() {
-		super({
-			clientID: process.env.GITLAB_CLIENT_ID,
-			clientSecret: process.env.GITLAB_CLIENT_SECRET,
-			callbackURL: process.env.GITLAB_CALLBACK_URL
-		},
-			async (accessToken, refreshToken, profile, done) => await this.verify(accessToken, refreshToken, profile, done)
+		super(
+			{
+				clientID: process.env.GITLAB_CLIENT_ID,
+				clientSecret: process.env.GITLAB_CLIENT_SECRET,
+				callbackURL: process.env.GITLAB_CALLBACK_URL,
+			},
+			async (accessToken, refreshToken, profile, done) =>
+				await this.verify(accessToken, refreshToken, profile, done),
 		);
 
 		passport.use(this as any);

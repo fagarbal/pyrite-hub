@@ -7,7 +7,7 @@ $ npm install
 ## run in development mode
 
 ```bash
-# watch mode - you need to start it two times if is the first time you run this command.
+# watch mode - sometimes you need to start it two times if is the first time you run this command.
 $ npm run watch
 ```
 

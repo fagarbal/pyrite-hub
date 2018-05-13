@@ -7,7 +7,7 @@ export class PagesController {
 
 	@Get('/')
 	index(@Req() req, @Res() res) {
-		return this.pagesComponent.next.render(req, res, '/');
+		return this.pagesComponent.next.render(req, res, '/dashboard');
 	}
 
 	@Get('/component/:name')

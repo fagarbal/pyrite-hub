@@ -15,7 +15,7 @@ const Components = withComponents(({loading, components}: any ) => {
 	return (
 		<CardColumns>
 			{components.map((component) => (
-				<Card key={component.id}>
+				<Card key={component._id}>
 					<a href={"/component/" + component.tag}>
 						<CardBody>
 							<CardTitle>{component.tag}</CardTitle>

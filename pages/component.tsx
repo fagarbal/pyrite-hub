@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight.js'
+
 export default class extends Component<any> {
 	static async getInitialProps({ query: { name } }) {
 		return { name: name }

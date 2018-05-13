@@ -7,6 +7,7 @@ module.exports = {
 	entry: ['webpack/hot/poll?100', './server/server.ts'],
 	watch: true,
 	target: 'node',
+	mode: 'development',
 	externals: [
 		nodeExternals({
 			whitelist: ['webpack/hot/poll?100'],
@@ -30,6 +31,6 @@ module.exports = {
 	],
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: 'main.js',
+		filename: 'server.js',
 	},
 };

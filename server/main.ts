@@ -1,5 +1,4 @@
-import * as session from 'express-session';
-// mport * as compression from 'compression';
+import * as compression from 'compression';
 
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
@@ -10,13 +9,11 @@ declare const module: any;
 export async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 	
-	// TODO: Fail with long graphql responses
-	// app.use(compression());
-
-	app.use(session({
-		secret: process.env.SESSION_SECRET,
-		resave: true,
-		saveUninitialized: true 
+	app.use(compression({
+		filter(req, res) {
+			if (req.headers['compression']) return false;
+			return compression.filter(req, res);
+		}
 	}));
 
 	initPassport(app);

@@ -4,15 +4,16 @@
 $ npm install
 ```
 
-## Running the app
+## run in development mode
 
 ```bash
-# development
-$ npm run dev
+# watch mode - you need to start it two times if is the first time you run this command.
+$ npm run watch
+```
 
-# watch mode
-$ npm run dev:watch
+## run in production mode
 
+```bash
 # production mode
 $ npm run build
 $ npm start

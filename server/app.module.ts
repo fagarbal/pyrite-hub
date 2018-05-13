@@ -11,4 +11,4 @@ import { GraphqlModule } from './graphql/graphql.module';
 		DatabaseModule, GraphqlModule, AuthModule, ComponentsModule, FileModule, PagesModule
 	]
 })
-export class AppModule {}
+export class AppModule {} 

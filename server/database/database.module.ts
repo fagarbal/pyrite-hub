@@ -11,6 +11,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 			password: process.env.MONGODB_PASSWORD,
 			database: process.env.MONGODB_DB,
 			entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+			authSource: process.env.MONGODB_AUTH_SOURCE,
 			synchronize: true,
 		}),
 	],

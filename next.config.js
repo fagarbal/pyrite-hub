@@ -19,8 +19,8 @@ module.exports = withSourceMaps(withTypeScript({
 		config.module.rules.push({
 			test: /\.scss$/,
 			use: ExtractTextPlugin.extract({
-			  fallback: 'style-loader',
-			  use: ['css-loader', 'sass-loader']
+				fallback: 'style-loader',
+				use: [{ loader: 'css-loader', options: { minimize: true } }, 'sass-loader']
 			})
 		});
 
@@ -29,7 +29,7 @@ module.exports = withSourceMaps(withTypeScript({
 				from: './static',
 				to: './static'
 			}]));
-		
+
 		config.plugins.push(
 			new ExtractTextPlugin({
 				filename: 'static/style.css'

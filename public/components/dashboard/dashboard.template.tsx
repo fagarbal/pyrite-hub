@@ -12,7 +12,7 @@ export default function (this: Dashboard) {
             <PyriteHead></PyriteHead>
             <div className="container over-header mt-4">
                 <section className="row">
-                    <CardDeck className="centered over-header">
+                    <CardDeck className="centered">
                         <InfoCard className="text-primary" icon="fa-blind" text="The help you need to build your website, just the way you need it"></InfoCard>
                         <InfoCard className="text-primary" icon="fa-tachometer-alt" text="Web development, modular and faster than ever before"></InfoCard>
                         <InfoCard className="text-primary" icon="fa-briefcase" text="Profesional web components, created and mantained by our community"></InfoCard>

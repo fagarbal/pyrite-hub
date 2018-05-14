@@ -23,4 +23,4 @@ $ npm start
 ## usefull urls
 
 - graphql testing tool: http://localhost:8080/graphiql
-- mongodb client web: http://localhost:8081
+- mongodb admin interface: http://localhost:1234

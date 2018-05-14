@@ -93,11 +93,7 @@
 		"rxjs": "^6.1.0",
 		"supertest": "^3.0.0",
 		"ts-jest": "^21.2.4",
-<<<<<<< HEAD
 		"ts-loader": "^3.5.0",
-=======
-		"ts-loader": "^3.0.0",
->>>>>>> finish initial styles
 		"ts-node": "^6.0.3",
 		"tsconfig-paths": "^3.3.2",
 		"tslint": "5.3.2",

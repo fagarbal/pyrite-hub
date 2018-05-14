@@ -1,48 +1,50 @@
 @import 'public/styles/common.style';
 
-.header {
-    margin-top: -1rem;
-    z-index: -1;
-    min-height: 30rem;
-    display: block;
-    background-image: url('https://www.berlin-welcomecard.de/sites/default/files/styles/stage_desktop_20x/public/berlin-welcomecard_hero_2880_.jpg?itok=J4euvI5S&timestamp=1517230620');
-    background-repeat: no-repeat;
+.component-detail {
+    .header {
+        margin-top: -1rem;
+        z-index: -1;
+        min-height: 30rem;
+        display: block;
+        background-image: url('https://www.berlin-welcomecard.de/sites/default/files/styles/stage_desktop_20x/public/berlin-welcomecard_hero_2880_.jpg?itok=J4euvI5S&timestamp=1517230620');
+        background-repeat: no-repeat;
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position-y: -10rem;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position-y: -10rem;
 
-.header-title {
-    position: relative;
-    margin: 1rem auto;
-    top: 4rem; 
-    color: #FFFFFF;
-    max-width: 26rem;
-}
+        .header-title {
+            position: relative;
+            margin: 1rem auto;
+            top: 4rem; 
+            color: #FFFFFF;
+            max-width: 26rem;
+        }
 
-.super-size-title {
-    font-weight: bolder;
-    font-size: 5.5rem
-}
+        .super-size-title {
+            font-weight: bolder;
+            font-size: 5.5rem
+        }
 
-.navbar{
-    z-index: 1;
-    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    transition: background .5s ease-in-out,padding .5s ease-in-out;
-    background-color: rgba(0,0,0,.2);
-}
+        .navbar{
+            z-index: 1;
+            -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+            -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
+            transition: background .5s ease-in-out,padding .5s ease-in-out;
+            background-color: rgba(0,0,0,.2);
+        }
 
-.over-header {
-    position: relative;
-    background-color: transparent;
-    margin-top: -8rem !important;
-    box-shadow: none;
-}
+        .over-header {
+            position: relative;
+            background-color: transparent;
+            margin-top: -8rem !important;
+            box-shadow: none;
+        }
 
-    .header-title{
-        display: none;
+        .header-title{
+            display: none;
+        }
     }
 }

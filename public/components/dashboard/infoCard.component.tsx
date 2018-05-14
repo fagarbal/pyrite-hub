@@ -1,8 +1,7 @@
 import React from 'react';
-import { Card, CardTitle, CardBody, CardText, CardImg } from 'reactstrap';
+import { Card, CardTitle, CardBody, CardText} from 'reactstrap';
 
 export const InfoCard = (props) => {
-  console.log(props)
   return (
     <div className="col-md-4 col-sm-1">
       <Card inverse>

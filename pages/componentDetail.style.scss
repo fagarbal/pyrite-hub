@@ -1,0 +1,20 @@
+@import 'public/styles/common.style';
+
+.component-detail {
+    .header{
+        background-color: $brand-primary;
+        background-image: none;
+        min-height: 18rem;
+    }
+
+    .component-infocard{
+        min-height: 15rem;
+        padding: 2rem;
+        
+        .user-image{
+            min-width: 5rem;
+            min-height: 5rem;
+            font-size: 50px;
+        }
+    }
+}

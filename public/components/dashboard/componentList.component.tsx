@@ -13,11 +13,11 @@ export const Components = withComponents(({loading, components}: any ) => {
 	return (
 		<CardColumns>
 			{components.map((component) => (
-				<Card key={component.id}>
+				<Card className="card bg-white" key={component._id}>
 					<a href={"/component/" + component.tag}>
 						<CardBody>
-							<CardTitle>{component.tag}</CardTitle>
-							<CardText>{component.description}</CardText>
+							<CardTitle className="text-muted">{component.tag}</CardTitle>
+							<CardText className="text-muted">{component.description}</CardText>
 						</CardBody>
 					</a>
 					<CardFooter>

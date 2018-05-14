@@ -1,46 +1,5 @@
 @import 'public/styles/common.style';
 
-html, body {
-    color: #343a40;
-}
-
-hr {
-    margin-right: 4rem;
-    margin-left: 4rem;
-    color: lightgray;
-    margin-top: 3rem;
-  }
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    text-decoration: none;
-    color: black;
-}
-
-.card {
-    background-color: #FFFFFF;
-    padding: 0;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
-}
-
-.card:hover {
-    box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 15px 3px rgba(0, 0, 0, 0.12), 0 4px 4px -3px rgba(0, 0, 0, 0.3);
-    color: black;
-}
-
-.card img {
-    width: 100%;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
 .header {
     margin-top: -1rem;
     z-index: -1;
@@ -54,7 +13,6 @@ a:hover {
     -o-background-size: cover;
     background-size: cover;
     background-position-y: -10rem;
-}
 
 .header-title {
     position: relative;
@@ -77,10 +35,6 @@ a:hover {
     background-color: rgba(0,0,0,.2);
 }
 
-.container {
-    padding: 1.5rem;
-}
-
 .over-header {
     position: relative;
     background-color: transparent;
@@ -88,13 +42,7 @@ a:hover {
     box-shadow: none;
 }
 
-.info-card-icon {
-    font-size: 80px;
-    color: $brand-primary;
-    text-align: center;
-}
-
-.centered {
-    margin: 0 auto;
-    text-align: center;
+    .header-title{
+        display: none;
+    }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight.js'
 import PyriteHead from '../public/components/dashboard/pyriteHead/pyriteHead.component';
-import "./componentDetail.style.scss";
 
 export default class extends Component<any> {
 	static async getInitialProps({ query: { name } }) {

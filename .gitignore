@@ -386,16 +386,10 @@ Temporary Items
 .apdisk
 
 =======
-# Local
-dokcer-compose.yml
-.env
 
-# MariaDB storage test
-.storage
-
-.dist
-dist
-.next
-
-production-server
+# MongoDB storage test
 .mongodb
+
+# Distribution folders
+.dist
+.next

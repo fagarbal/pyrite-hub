@@ -10,7 +10,7 @@ export class GitlabStrategy extends Strategy {
 			{
 				clientID: process.env.GITLAB_CLIENT_ID,
 				clientSecret: process.env.GITLAB_CLIENT_SECRET,
-				callbackURL: process.env.GITLAB_CALLBACK_URL,
+				callbackURL: process.env.API_URL + process.env.GITLAB_CALLBACK_URL,
 			},
 			async (accessToken, refreshToken, profile, done) =>
 				await this.verify(accessToken, refreshToken, profile, done),

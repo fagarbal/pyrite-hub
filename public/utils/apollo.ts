@@ -14,7 +14,7 @@ function create() {
 		connectToDevTools: (<any>process).browser,
 		ssrMode: !(<any>process).browser,
 		link: new HttpLink({
-			uri: process.env.GRAPHQL_URL || location.href + 'graphql',
+			uri: process.env.API_URL + process.env.GRAPHQL_URL || location.href + 'graphql',
 			fetch,
 			headers: { compression: 'no' },
 		}),

@@ -9,7 +9,7 @@ export class BitbucketStrategy extends Strategy {
 			{
 				clientID: process.env.BITBUCKET_CLIENT_ID,
 				clientSecret: process.env.BITBUCKET_CLIENT_SECRET,
-				callbackURL: process.env.BITBUCKET_CALLBACK_URL,
+				callbackURL: process.env.API_URL + process.env.BITBUCKET_CALLBACK_URL,
 			},
 			async (accessToken, refreshToken, profile, done) =>
 				await this.verify(accessToken, refreshToken, profile, done),

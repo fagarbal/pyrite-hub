@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"></link>
                     <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/railscasts.css"/>
                     <link rel="stylesheet" href="/_next/static/style.css"></link>
-                    <link rel="shortcut icon" type="image/png" href="/_next/static/images/logo.png"/>
+                    <link rel="shortcut icon" type="image/png" href="/static/images/logo.png"/>
                 </Head>
                 <body className="custom_class">
                     <Main />

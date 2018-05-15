@@ -15,7 +15,7 @@
 		"dev": "NODE_ENV=development node dist/server.js -p $PORT",
 		"watch": "npm run clean && nodemon server/server.ts",
 		"clean": "rm -rf .next/",
-		"build": "npm run clean && next build && tsc --project tsconfig.server.json",
+		"build": "npm run clean && next build public && tsc --project tsconfig.server.json",
 		"start": "NODE_ENV=production node dist/server.js -p $PORT",
 		"test:debug": "./node_modules/.bin/jest --debug",
 		"test:verbose": "./node_modules/.bin/jest --verbose",

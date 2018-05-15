@@ -7,6 +7,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { ANALYZE } = process.env;
 
 module.exports = withSourceMaps(withTypeScript({
+	distDir: '../.next',
 	webpack: function (config) {
 		if (ANALYZE) {
 			config.plugins.push(new BundleAnalyzerPlugin({
@@ -32,12 +33,12 @@ module.exports = withSourceMaps(withTypeScript({
 			})
 		);
 
-/* 		config.plugins.push(
+		config.plugins.push(
 			new CopyWebpackPlugin([{
-				from: './public/static',
+				from: './static',
 				to: './static'
 			}]));
- */
+ 
 		return config;
 	}
 }));

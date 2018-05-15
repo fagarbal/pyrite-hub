@@ -14,7 +14,7 @@ export class PagesComponent {
 	async onModuleInit() {
 		this.next = next({
 			dev: process.env.NODE_ENV !== 'production',
-			dir: 'public',
+			dir: 'public'
 		});
 
 		this.handle = this.next.getRequestHandler();

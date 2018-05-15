@@ -17,6 +17,7 @@
 		"clean": "rm -rf .next/",
 		"build": "npm run clean && next build public && tsc --project tsconfig.server.json",
 		"start": "NODE_ENV=production node .dist/server.js -p $PORT",
+		"start:pre": "NODE_ENV=preproduction node .dist/server.js -p $PORT",
 		"test:debug": "./node_modules/.bin/jest --debug",
 		"test:verbose": "./node_modules/.bin/jest --verbose",
 		"test:watch": "./node_modules/.bin/jest --watch",

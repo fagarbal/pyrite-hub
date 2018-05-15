@@ -34,7 +34,7 @@ module.exports = withSourceMaps(withTypeScript({
 
 		config.plugins.push(
 			new CopyWebpackPlugin([{
-				from: './static',
+				from: './public/static',
 				to: './static'
 			}]));
 

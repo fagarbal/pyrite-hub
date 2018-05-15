@@ -48,17 +48,16 @@ export default function (this: Overview) {
                 <b>Example Usage</b>
                 <br />
 
-                <Highlight language='html'>
-                    {
-                        `<html>
+                <Highlight language='html'>{
+`<html>
 	<head>
 		<script src="http://www.pyritehub.com/components/`+ this.props.name + `"></script>
 	</head>
 	<body>
 		<`+ this.props.name + `></` + this.props.name + `>
 	</body>
-</html>`}
-                </Highlight>
+</html>`
+                }</Highlight>
             </div>
         </section>
     );

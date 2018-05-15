@@ -22,7 +22,7 @@ function create() {
 	});
 }
 
-export default function initApollo() {
+function initApollo() {
 	if (!(<any>process).browser) {
 		return create();
 	}
@@ -33,3 +33,7 @@ export default function initApollo() {
 
 	return apolloClient;
 }
+
+apolloClient = initApollo();
+
+export { apolloClient };

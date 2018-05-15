@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import pyriteHeadTemplate from './pyriteHead.template';
-import "./pyriteHead.style.scss";
 
 interface PyriteHeadProps {
 	modal?: boolean;

@@ -19,21 +19,24 @@ module.exports = withSourceMaps(withTypeScript({
 		config.module.rules.push({
 			test: /\.scss$/,
 			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				use: [{ loader: 'css-loader'}, 'sass-loader']
+			  fallback: 'style-loader',
+			  use: ['css-loader', 'sass-loader']
 			})
 		});
+
+		config.plugins.push(
+			new ExtractTextPlugin({
+				filename: 'static/style.css',
+				ignoreOrder: true,
+				allChunks: true
+			})
+		);
 
 		config.plugins.push(
 			new CopyWebpackPlugin([{
 				from: './static',
 				to: './static'
 			}]));
-
-		config.plugins.push(
-			new ExtractTextPlugin({
-				filename: 'static/style.css'
-			}));
 
 		return config;
 	}

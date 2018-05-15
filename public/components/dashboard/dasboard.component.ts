@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import dashboardTemplate from './dashboard.template';
-import "./dashboard.style.scss";
 
 interface IndexProps {
 	cards: Array<any>;

@@ -32,12 +32,12 @@ module.exports = withSourceMaps(withTypeScript({
 			})
 		);
 
-		config.plugins.push(
+/* 		config.plugins.push(
 			new CopyWebpackPlugin([{
 				from: './public/static',
 				to: './static'
 			}]));
-
+ */
 		return config;
 	}
 }));

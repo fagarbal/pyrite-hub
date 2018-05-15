@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dashboard } from '../public/components/dashboard/dasboard.component';
+import { Dashboard } from '../components/dashboard/dasboard.component';
 
 export default class extends Component<any, any> {
     render() {

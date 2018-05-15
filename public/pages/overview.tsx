@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Overview } from '../public/components/overview/overview.component';
+import { Overview } from '../components/overview/overview.component';
 
 export default class extends Component<any, any> {
 	static async getInitialProps({ query: { name } }) {

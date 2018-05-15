@@ -1,6 +1,5 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document'
-import '../public/styles/build.style.scss'; 
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx) {

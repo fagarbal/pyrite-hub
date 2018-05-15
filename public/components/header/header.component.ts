@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import pyriteHeadTemplate from './pyriteHead.template';
+import headerTemplate from './header.template';
 
 interface PyriteHeadProps {
 	modal?: boolean;
@@ -10,7 +10,7 @@ interface PyriteHeadState {
 	collapsed?: boolean;
 }
 
-class pyriteHead extends Component<PyriteHeadProps, PyriteHeadState> {
+export class Header extends Component<PyriteHeadProps, PyriteHeadState> {
 	constructor(props) {
 		super(props);
 
@@ -21,7 +21,7 @@ class pyriteHead extends Component<PyriteHeadProps, PyriteHeadState> {
 
 		this.toggleModal = this.toggleModal.bind(this);
 		this.toggleNavbar = this.toggleNavbar.bind(this);
-		this.render = pyriteHeadTemplate.bind(this);
+		this.render = headerTemplate.bind(this);
 	}
 
 	componentDidMount() {
@@ -42,5 +42,3 @@ class pyriteHead extends Component<PyriteHeadProps, PyriteHeadState> {
 		});
 	}
 }
-
-export default pyriteHead;

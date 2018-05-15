@@ -1,6 +1,6 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import {apolloClient} from "../public/lib/apollo";
+import {apolloClient} from "../public/utils/apollo";
 import { ApolloProvider } from 'react-apollo';
 import '../public/styles/build.style.scss'; 
 

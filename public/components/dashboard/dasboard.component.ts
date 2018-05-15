@@ -1,17 +1,17 @@
 import { Component } from 'react';
 import dashboardTemplate from './dashboard.template';
 
-interface IndexProps {
-	cards: Array<any>;
+export interface IndexProps {
+	cards?: Array<any>;
 	modal?: boolean;
 }
 
-interface IndexState {
+export interface IndexState {
 	modal?: boolean;
 	collapsed?: boolean;
 }
 
-class Dashboard extends Component<IndexProps, IndexState> {
+export class Dashboard extends Component<IndexProps, IndexState> {
 	constructor(props) {
 		super(props);
 
@@ -43,5 +43,3 @@ class Dashboard extends Component<IndexProps, IndexState> {
 		});
 	}
 }
-
-export default Dashboard;

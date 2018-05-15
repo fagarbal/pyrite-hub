@@ -1,15 +1,15 @@
 import React from 'react';
-import Dashboard from './dasboard.component';
+import { Dashboard } from './dasboard.component';
 import { CardDeck } from 'reactstrap';
-import { Components } from './componentList.component';
+import { Components } from './dashboard.list.component';
 import { InfoCard } from './infoCard.component';
-import PyriteHead from './pyriteHead/pyriteHead.component';
+import { Header } from '../header/header.component';
 
 export default function (this: Dashboard) {
     return (
         <div>
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-            <PyriteHead></PyriteHead>
+            <Header></Header>
             <div className="container over-header mt-4">
                 <section className="row">
                     <CardDeck className="centered">

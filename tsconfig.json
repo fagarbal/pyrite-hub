@@ -24,7 +24,18 @@
 			"es2015",
 			"es2016"
 		],
-		"outDir": ".next/"
+		"outDir": ".next/",
+		"paths": {
+			"@components/*": [
+				"public/components/*"
+			],
+			"@queries/*": [
+				"public/queries/*"
+			],
+			"@utils/*": [
+				"public/utils/*"
+			]
+		}
 	},
 	"exclude": [
 		"node_modules",

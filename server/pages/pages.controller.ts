@@ -6,13 +6,13 @@ export class PagesController {
 	constructor(private readonly pagesComponent: PagesComponent) {}
 
 	@Get('/')
-	index(@Req() req, @Res() res) {
+	dashboard(@Req() req, @Res() res) {
 		return this.pagesComponent.next.render(req, res, '/dashboard');
 	}
 
 	@Get('/component/:name')
-	component(@Req() req, @Res() res) {
-		return this.pagesComponent.next.render(req, res, '/component', {
+	overview(@Req() req, @Res() res) {
+		return this.pagesComponent.next.render(req, res, '/overview', {
 			name: req.params.name,
 		});
 	}

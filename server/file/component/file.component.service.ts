@@ -11,8 +11,8 @@ export class FileComponentService {
 			fs.readFile(
 				this.folder + '/' + component + '/' + version + '/index.js',
 				(err, file) => {
-					if (err) return resolve(`;console.warn('Component ${component}@${version} does not exist');`),
-					resolve(file);
+					if (!err) return resolve(file);
+					resolve(`;console.warn('Component ${component}@${version} does not exist');`);
 				},
 			);
 		});
@@ -24,9 +24,7 @@ export class FileComponentService {
 		const files = componentParam.map(component => {
 			const [componentName, version] = component.split('@');
 
-			if (!version) return this.readFile('latest', componentName);
-
-			return this.readFile(version, componentName);
+			return this.readFile(version || 'latest', componentName);
 		});
 
 		return Promise.all(files).then(files => files.join(''));

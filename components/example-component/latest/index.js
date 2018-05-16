@@ -6,7 +6,7 @@ window.customElements.define("example-component", class ExampleComponent extends
 
     connectedCallback() {
         const h1 = document.createElement("h1");
-        h1.innerText = "Example Component lastest";
+        h1.innerText = "Example Component latest";
         h1.style.color = this.getAttribute("color");
         this.shadowRoot.appendChild(h1);
     }

@@ -4,6 +4,7 @@ import * as fs from 'fs';
 @Injectable()
 export class FileComponentService {
 	private readonly folder = './components';
+	private loader: string;
 
 	private readFile(version, component) {
 		return new Promise(resolve => {
@@ -36,5 +37,17 @@ export class FileComponentService {
 		});
 
 		return Promise.all(files).then(files => files.join(''));
+	}
+
+	getDinamic() {
+		if (this.loader) return Promise.resolve(this.loader);
+
+		return new Promise((resolve, reject) => {
+			fs.readFile(__dirname + '/dinamic.loader.js',(err, file) => {
+				if (err) reject(err);
+				this.loader = file.toString().replace('{URL}', process.env.API_URL);
+				resolve(this.loader);
+			});
+		});
 	}
 }

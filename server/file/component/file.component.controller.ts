@@ -5,6 +5,17 @@ import { FileComponentService } from './file.component.service';
 export class FileComponentController {
 	constructor(private readonly fileComponentService: FileComponentService) {}
 
+	@Get('/')
+	async getDinamicComponents(
+		@Res() res
+	) {
+		res.header('Content-Type', 'application/javascript');
+
+		const loader = await this.fileComponentService.getDinamic();
+
+		res.send(loader);
+	}
+
 	@Get(':components')
 	async getComponents(
 		@Res() res,

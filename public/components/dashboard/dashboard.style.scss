@@ -1,99 +1,33 @@
-@import 'public/styles/common.style';
+@import 'public/styles/variables.style';
 
-html, body {
-    color: #343a40;
-}
+.dashboard {
+    .background-image {
+        min-height: 35rem;
+        background-image: url('https://www.berlin-welcomecard.de/sites/default/files/styles/stage_desktop_20x/public/berlin-welcomecard_hero_2880_.jpg?itok=J4euvI5S&timestamp=1517230620');
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position-y: -5rem;
+    }
 
-hr {
-    margin-right: 4rem;
-    margin-left: 4rem;
-    color: lightgray;
-    margin-top: 3rem;
-  }
+    .title {
+        padding-top: 10rem;
+    }
 
-a {
-    text-decoration: none;
-    color: black;
-}
+    .container-info {
+        margin-top: -8rem;
+        margin-bottom: 6rem;
+    }
 
-a:hover {
-    text-decoration: none;
-    color: black;
-}
+    .container-components {
+        margin-top: 6rem;
+        padding-bottom: 8rem;
+    }
 
-.card {
-    background-color: #FFFFFF;
-    padding: 0;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
-}
-
-.card:hover {
-    box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 15px 3px rgba(0, 0, 0, 0.12), 0 4px 4px -3px rgba(0, 0, 0, 0.3);
-    color: black;
-}
-
-.card img {
-    width: 100%;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-.header {
-    margin-top: -1rem;
-    z-index: -1;
-    min-height: 30rem;
-    display: block;
-    background-image: url('https://www.berlin-welcomecard.de/sites/default/files/styles/stage_desktop_20x/public/berlin-welcomecard_hero_2880_.jpg?itok=J4euvI5S&timestamp=1517230620');
-    background-repeat: no-repeat;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position-y: -10rem;
-}
-
-.header-title {
-    position: relative;
-    margin: 1rem auto;
-    top: 4rem; 
-    color: #FFFFFF;
-    max-width: 26rem;
-}
-
-.super-size-title {
-    font-weight: bolder;
-    font-size: 5.5rem
-}
-
-.navbar{
-    z-index: 1;
-    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    transition: background .5s ease-in-out,padding .5s ease-in-out;
-    background-color: rgba(0,0,0,.2);
-}
-
-.container {
-    padding: 1.5rem;
-}
-
-.over-header {
-    position: relative;
-    margin-top: -8rem !important;
-    box-shadow: none;
-}
-
-.info-card-icon {
-    font-size: 80px;
-    color: $brand-primary;
-    text-align: center;
-}
-
-.centered {
-    margin: 0 auto;
-    text-align: center;
+    .card-icon {
+        font-size: 80px;
+        color: $brand-primary;
+    }
 }

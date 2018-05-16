@@ -1,15 +1,14 @@
 import React from 'react';
 import Highlight from 'react-highlight.js'
 import { Overview } from "./overview.component";
-import { Header } from '../header/header.component';
 
 export default function (this: Overview) {
     return (
-        <section className="component-detail">
-            <Header></Header>
+        <section className="overview">
+            <div className="title"></div>
             <div className="container card over-header">
                 <div className="row">
-                    <div className="col-md-8 col-sm-8">
+                    <div className="col-md-12 col-lg-8">
                         <h1 className="centered">{this.props.name}</h1>
                         <pre className="centered mb-4">
                             <b><a href={"http://www.pyritehub.com/components/" + this.props.name}>
@@ -23,18 +22,21 @@ export default function (this: Overview) {
                             <this.props.name></this.props.name>
                         </pre>
                     </div>
-                    <div className="col-md-4 col-sm-4">
+                    <div className="col-md-12 col-lg-4">
                         <div className="card component-infocard">
                             <h3><i className="fas fa-user-circle user-image"></i>by FerranMrg</h3>
                             <hr />
                             <div className="row">
-                                <button type="button" className="btn btn-outline-danger col-md-5 col-sm-5 float-right mr-4">
-                                    220 <i className="fas fa-heart"></i>
-                                </button>
-
-                                <button type="button" className="btn btn-outline-primary col-md-5 col-sm-5 float-right">
-                                    10K <i className="fa fa-eye"></i>
-                                </button>
+                                <div className="col-6">
+                                    <button type="button" className="btn btn-outline-danger col-12">
+                                        220 <i className="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div className="col-6">
+                                    <button type="button" className="btn btn-outline-primary col-12">
+                                        10K <i className="fa fa-eye"></i>
+                                    </button>
+                                </div>
                             </div>
                             <br />
                             <h5>Component version</h5> 2.4.2
@@ -42,12 +44,7 @@ export default function (this: Overview) {
                     </div>
                 </div>
                 <hr />
-
-                <br />
-
                 <b>Example Usage</b>
-                <br />
-
                 <Highlight language='html'>{
 `<html>
 	<head>

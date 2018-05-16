@@ -1,16 +1,20 @@
-@import 'public/styles/common.style';
+@import 'public/styles/variables.style';
 
-.component-detail {
-    .header{
+.overview {
+    .title {
         background-color: $brand-primary;
-        background-image: none;
         min-height: 18rem;
     }
 
-    .component-infocard{
+    .container {
+        padding: 3rem;
+        margin-top: -9rem;
+    }
+
+    .component-infocard {
         min-height: 15rem;
         padding: 2rem;
-        
+
         .user-image{
             min-width: 5rem;
             min-height: 5rem;

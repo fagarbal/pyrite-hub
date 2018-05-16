@@ -1,5 +1,5 @@
-import { withComponents } from '../../queries/component.query';
 import { Card, CardBody, CardTitle, CardText, CardFooter, CardColumns } from 'reactstrap';
+import { withComponents } from '@queries/component.query';
 
 export const Components = withComponents(({loading, components}: any ) => {
 	if (loading || !components) return (

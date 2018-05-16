@@ -1,14 +1,29 @@
-$theme-colors: (
-  "primary": #009688,
-  "secondary": #FFC107,
-  "danger": #B00022
-);
+a {
+  text-decoration: none;
+  color: black;
+}
 
-$brand-primary: #009688;
-$brand-secondary: #FFC107;
-$brand-danger: #B00022;
-//$link-color: #03DAC6;
+a:hover {
+  text-decoration: none;
+  color: black;
+}
 
-$enable-rounded : true;
-$enable-shadows	: true;
-$enable-gradients : true;
+.card {
+  background-color: #FFFFFF;
+  padding: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 15px 3px rgba(0, 0, 0, 0.12), 0 4px 4px -3px rgba(0, 0, 0, 0.3);
+  color: black;
+}
+
+.card img {
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}

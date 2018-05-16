@@ -33,10 +33,6 @@ export default function (this: Header) {
                     </Nav>
                 </Collapse>
             </Navbar>
-            <div className="header-title">
-                <h1 className="mb-3">Pyrite Hub</h1>
-                <h4 className="mb-3">Web components, the easy way</h4>
-            </div>
         </div>
     );
 };

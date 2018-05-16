@@ -11,14 +11,7 @@ export class FileComponentService {
 			fs.readFile(
 				this.folder + '/' + component + '/' + version + '/index.js',
 				(err, file) => {
-					if (err)
-						return resolve(
-							"console.warn('Component " +
-								component +
-								'@' +
-								version +
-								" does not exist');",
-						);
+					if (err) return resolve(`;console.warn('Component ${component}@${version} does not exist');`),
 					resolve(file);
 				},
 			);
@@ -45,9 +38,13 @@ export class FileComponentService {
 		const dirname = __dirname.replace('.dist', 'server');
 
 		return new Promise((resolve, reject) => {
-			fs.readFile(dirname + '/dinamic.loader.js',(err, file) => {
+			fs.readFile(dirname + '/dinamic.loader.js', (err, file) => {
 				if (err) reject(err);
-				this.loader = file.toString().replace('{URL}', process.env.API_URL);
+
+				this.loader = file
+					.toString()
+					.replace('{URL}', process.env.API_URL);
+
 				resolve(this.loader);
 			});
 		});

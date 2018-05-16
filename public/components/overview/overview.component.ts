@@ -20,10 +20,10 @@ export class Overview extends Component<OverviewProps, OverviewState> {
 		return `
 			<html>
 				<head>
-					<script src="http://www.pyritehub.com/components/`+ this.props.name + `"></script>
+					<script src="http://www.pyritehub.com/components/${this.props.name}"></script>
 				</head>
 				<body>
-					<`+ this.props.name + `></` + this.props.name + `>
+					<${this.props.name}></${this.props.name}>
 				</body>
 			</html>
 		`;

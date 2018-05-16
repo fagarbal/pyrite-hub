@@ -42,8 +42,10 @@ export class FileComponentService {
 	getDinamic() {
 		if (this.loader) return Promise.resolve(this.loader);
 
+		const dirname = __dirname.replace('.dist', 'server');
+
 		return new Promise((resolve, reject) => {
-			fs.readFile(__dirname + '/dinamic.loader.js',(err, file) => {
+			fs.readFile(dirname + '/dinamic.loader.js',(err, file) => {
 				if (err) reject(err);
 				this.loader = file.toString().replace('{URL}', process.env.API_URL);
 				resolve(this.loader);

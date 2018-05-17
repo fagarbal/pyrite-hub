@@ -12,7 +12,6 @@ export default class MyDocument extends Document {
             <html lang="en">
                 <Head>
                     <meta charSet="utf-8" />
-                    <meta name="google-site-verification" content="wyJvbNUew0FYi0FefInY7Yza-sCsmM3KboEPxNiQPuQ" />
                     <title>Pyrite Hub - Web Components Cloud</title>
                     <meta name="description" content="From your repository to internet with a few clicks"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>

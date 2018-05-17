@@ -19,9 +19,9 @@ export default function (this: Dashboard) {
             <div className="container container-info">
                 <section className="row">
                     <CardDeck className="centered">
-                        <InfoCard icon="fa-blind" text="The help you need to build your website, just the way you need it"></InfoCard>
-                        <InfoCard icon="fa-tachometer-alt" text="Web development, modular and faster than ever before"></InfoCard>
-                        <InfoCard icon="fa-briefcase" text="Profesional web components, created and mantained by our community"></InfoCard>
+                        <InfoCard icon="fa-cloud" text="The help you need to build your website, just the way you need it"></InfoCard>
+                        <InfoCard icon="fa-cogs" text="Web development, modular and faster than ever before"></InfoCard>
+                        <InfoCard icon="fa-users" text="Profesional web components, created and mantained by our community"></InfoCard>
                     </CardDeck>
                 </section>
             </div>

@@ -2,14 +2,13 @@
 
 .dashboard {
     .background-image {
-        min-height: 35rem;
+        min-height: 100vh;
         background-image: url('https://www.berlin-welcomecard.de/sites/default/files/styles/stage_desktop_20x/public/berlin-welcomecard_hero_2880_.jpg?itok=J4euvI5S&timestamp=1517230620');
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        background-position-y: -5rem;
     }
 
     .title {
@@ -17,17 +16,37 @@
     }
 
     .container-info {
-        margin-top: -8rem;
+        margin-top: -25rem;
         margin-bottom: 6rem;
     }
 
-    .container-components {
-        margin-top: 6rem;
-        padding-bottom: 8rem;
+    @include media-breakpoint-between(xs, sm) {
+        .container-info {
+            margin-top: 0rem;
+        }
     }
+
+    .container-components {
+        margin-top: 10rem;
+    }
+
+    @include media-breakpoint-between(xs, sm) {
+        .container-components {
+            margin-top: -5rem;
+        }
+    }
+
 
     .card-icon {
         font-size: 80px;
         color: $brand-primary;
     }
+
+    .down-mark {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        font-size: 64px;
+    } 
 }

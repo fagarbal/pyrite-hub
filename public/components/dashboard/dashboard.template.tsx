@@ -12,6 +12,9 @@ export default function (this: Dashboard) {
                     <h1 className="mb-3">Pyrite Hub</h1>
                     <h4 className="mb-3">Web components, the easy way</h4>
                 </div>
+                <p className="text-center down-mark text-secondary">
+                    <i className="fas fa-angle-double-down"></i>
+                </p>
             </div>
             <div className="container container-info">
                 <section className="row">
@@ -22,7 +25,6 @@ export default function (this: Dashboard) {
                     </CardDeck>
                 </section>
             </div>
-            <hr />
             <div className="container container-components">
                 <h1 className="mb-5 text-center"><i className="fas fa-crown"></i>Featured components</h1>
                 <Components></Components>

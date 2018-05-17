@@ -9,21 +9,19 @@ export default class MyDocument extends Document {
 
     render() {
         return (
-            <html>
+            <html lang="en">
                 <Head>
                     <meta charSet="utf-8" />
-                    <title>PyriteHub</title>
-                    <meta name="description" content="From your git repository to internet with some clicks"/>
+                    <title>Pyrite Hub - Web Components Cloud</title>
+                    <meta name="description" content="From your repository to internet with a few clicks"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                     <link rel="stylesheet" href="/_next/static/style.css"/>
                     <link rel="shortcut icon" type="image/png" href="/static/images/logo.png"/>
+                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"/>
                 </Head>
-                <body className="custom_class">
+                <body>
                     <Main />
                     <NextScript />
-                    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"/>
-                    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/railscasts.css"/>
                 </body>
             </html>
         );

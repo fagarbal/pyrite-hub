@@ -10,6 +10,7 @@ export default class extends Component<any, any> {
 	render() {
 		return (
 			<div>
+				<link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/railscasts.css"/>
 				<Header></Header>
 				<Overview name={this.props.name}></Overview>
 			</div>

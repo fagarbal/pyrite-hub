@@ -1,0 +1,17 @@
+{
+    "dashboard": {
+        "title": "Pyrite Hub",
+        "subtitle": "Web Components, the easy way",
+        "featured": "Featured Components",
+        "infoLeft": "The help you need to build your website, just the way you need it",
+        "infoCenter": "Web development, modular and faster than ever before",
+        "infoRight": "Profesional web components, created and mantained by our community",
+        "scrollDown": "Scroll down"
+    },
+    "cancel": "Cancel",
+    "loading": "Loading",
+    "header": {
+        "loginMethod": "Login Method",
+        "login": "Log in"
+    }
+}

@@ -1,10 +1,11 @@
 import { withComponents } from '@queries/component.query';
+import { translation } from '@utils/i18n';
 
 export const Components = withComponents(({loading, components}: any ) => {
 	if (loading || !components) return (
 		<div>
 			<b>
-				<span>Loading </span> <i className="fa fa-spinner fa-spin"></i>
+				<span>{translation('loading')}</span> <i className="fa fa-spinner fa-spin"></i>
 			</b>
 		</div>
 	);

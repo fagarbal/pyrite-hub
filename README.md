@@ -4,8 +4,7 @@
 $ sudo docker-compose up
 ```
 
-
-## Installation
+## Installation npm
 
 ```bash
 $ npm install
@@ -14,7 +13,7 @@ $ npm install
 ## run in development mode
 
 ```bash
-$ sudo docker-compose up -d mongo-express
+$ sudo docker-compose up -d mongo
 $ npm run watch
 ```
 
@@ -27,5 +26,6 @@ $ npm start
 
 ## usefull urls
 
+- website: http://localhost:8080
 - graphql testing tool: http://localhost:8080/graphiql
 - mongodb admin interface: http://localhost:1234

@@ -2,17 +2,30 @@ version: '3.1'
 
 services:
 
+  node:
+    build: .
+    volumes:
+      - ./server:/app/server
+      - ./public:/app/public
+      - ./components:/app/components
+    ports:
+      - 8080:8080
+    links:
+      - mongo
+
   mongo:
     image: mongo
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: pyritehub
       MONGO_INITDB_ROOT_PASSWORD: pyritehub
+    ports:
+      - 27270:27017
     volumes:
       - ./.mongodb:/data/db
       - ./migrations:/docker-entrypoint-initdb.d
-    ports:
-      - 27270:27017
+    links:
+      - mongo-express
 
   mongo-express:
     image: mongo-express

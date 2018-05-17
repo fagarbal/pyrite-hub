@@ -1,3 +1,10 @@
+## run and install only with docker
+
+```bash
+$ sudo docker-compose up
+```
+
+
 ## Installation
 
 ```bash
@@ -7,7 +14,7 @@ $ npm install
 ## run in development mode
 
 ```bash
-$ docker-compose up -d
+$ sudo docker-compose up -d mongo-express
 $ npm run watch
 ```
 

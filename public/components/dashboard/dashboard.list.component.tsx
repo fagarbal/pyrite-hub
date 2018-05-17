@@ -22,13 +22,13 @@ export const Components = withComponents(({loading, components}: any ) => {
 							</div>
 						</a>
 						<div className="card-footer">
-							<button type="button" className="btn btn-outline-primary btn-sm">
+							<button type="button" className="btn btn-primary btn-sm">
 								{component.username} <i className="fa fa-user"></i>
 							</button>
-							<button type="button" className="btn btn-outline-danger btn-sm float-right ml-1">
+							<button type="button" className="btn btn-danger btn-sm float-right ml-1">
 								{component.likes} <i className="fas fa-heart"></i>
 							</button>
-							<button type="button" className="btn btn-outline-primary btn-sm float-right">
+							<button type="button" className="btn btn-primary btn-sm float-right">
 								{component.views} <i className="fa fa-eye"></i>
 							</button>	
 						</div>

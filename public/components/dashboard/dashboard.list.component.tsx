@@ -1,4 +1,3 @@
-import { Card, CardBody, CardTitle, CardText, CardFooter, CardColumns } from 'reactstrap';
 import { withComponents } from '@queries/component.query';
 
 export const Components = withComponents(({loading, components}: any ) => {
@@ -11,28 +10,30 @@ export const Components = withComponents(({loading, components}: any ) => {
 	);
  
 	return (
-		<CardColumns>
+		<div className="row">
 			{components.map((component) => (
-				<Card className="card bg-white" key={component._id}>
-					<a href={"/component/" + component.tag}>
-						<CardBody>
-							<CardTitle className="text-muted">{component.tag}</CardTitle>
-							<CardText className="text-muted">{component.description}</CardText>
-						</CardBody>
-					</a>
-					<CardFooter>
-						<button type="button" className="btn btn-outline-primary btn-sm">
-							{component.username} <i className="fa fa-user"></i>
-						</button>
-						<button type="button" className="btn btn-outline-danger btn-sm float-right ml-1">
-							{component.likes} <i className="fas fa-heart"></i>
-						</button>
-						<button type="button" className="btn btn-outline-primary btn-sm float-right">
-							{component.views} <i className="fa fa-eye"></i>
-						</button>	
-					</CardFooter>
-				</Card>
+				<div className="col-12 col-md-6 col-lg-4 mb-3" key={component._id}>
+					<div className="card">
+						<a href={"/component/" + component.tag}>
+							<div className="card-body">
+								<h5 className="text-muted card-title">{component.tag}</h5>
+								<p className="text-muted card-text">{component.description}</p>
+							</div>
+						</a>
+						<div className="card-footer">
+							<button type="button" className="btn btn-outline-primary btn-sm">
+								{component.username} <i className="fa fa-user"></i>
+							</button>
+							<button type="button" className="btn btn-outline-danger btn-sm float-right ml-1">
+								{component.likes} <i className="fas fa-heart"></i>
+							</button>
+							<button type="button" className="btn btn-outline-primary btn-sm float-right">
+								{component.views} <i className="fa fa-eye"></i>
+							</button>	
+						</div>
+					</div>
+				</div>
 			))}
-		</CardColumns>
+		</div>
 	);
 });

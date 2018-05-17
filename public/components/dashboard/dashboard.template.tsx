@@ -1,32 +1,28 @@
 import React from 'react';
+
 import { Dashboard } from './dasboard.component';
-import { CardDeck } from 'reactstrap';
 import { Components } from './dashboard.list.component';
-import { InfoCard } from './dashboard.card.component';
+import { InfoCards } from './dashboard.info.component';
 
 export default function (this: Dashboard) {
     return (
         <div className="dashboard">
             <div className="background-image">
                 <div className="title text-white text-center">
-                    <h1 className="mb-3">Pyrite Hub</h1>
-                    <h4 className="mb-3">Web components, the easy way</h4>
+                    <h1>Pyrite Hub</h1>
+                    <h2>Web components, the easy way</h2>
                 </div>
                 <p className="text-center down-mark text-secondary">
-                    <i className="fas fa-angle-double-down"></i>
+                    <i className="down-mark fas fa-angle-double-down"></i>
                 </p>
             </div>
             <div className="container container-info">
                 <section className="row">
-                    <CardDeck className="centered">
-                        <InfoCard icon="fa-cloud" text="The help you need to build your website, just the way you need it"></InfoCard>
-                        <InfoCard icon="fa-cogs" text="Web development, modular and faster than ever before"></InfoCard>
-                        <InfoCard icon="fa-users" text="Profesional web components, created and mantained by our community"></InfoCard>
-                    </CardDeck>
+                    <InfoCards></InfoCards>
                 </section>
             </div>
             <div className="container container-components">
-                <h1 className="mb-5 text-center"><i className="fas fa-crown"></i>Featured components</h1>
+                <h1 className="mb-5 text-center text-muted">Featured components</h1>
                 <Components></Components>
             </div>
         </div>

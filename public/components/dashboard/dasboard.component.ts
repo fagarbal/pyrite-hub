@@ -21,7 +21,6 @@ export class Dashboard extends Component<IndexProps, IndexState> {
 		};
 
 		this.toggleModal = this.toggleModal.bind(this);
-		this.toggleNavbar = this.toggleNavbar.bind(this);
 		this.render = dashboardTemplate.bind(this);
 	}
 
@@ -34,12 +33,6 @@ export class Dashboard extends Component<IndexProps, IndexState> {
 	toggleModal() {
 		this.setState({
 			modal: !this.state.modal,
-		});
-	}
-
-	toggleNavbar() {
-		this.setState({
-			collapsed: !this.state.collapsed,
 		});
 	}
 }

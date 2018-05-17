@@ -17,15 +17,13 @@ export class Overview extends Component<OverviewProps, OverviewState> {
 	}
 
 	exampleContent() {
-		return `
-			<html>
-				<head>
-					<script src="http://www.pyritehub.com/components/${this.props.name}"></script>
-				</head>
-				<body>
-					<${this.props.name}></${this.props.name}>
-				</body>
-			</html>
-		`;
+		return `<html>
+	<head>
+		<script src="http://www.pyritehub.com/components/${this.props.name}"></script>
+	</head>
+	<body>
+		<${this.props.name}></${this.props.name}>
+	</body>
+</html>`;
 	}
 }

@@ -26,7 +26,7 @@ export default function (this: Header) {
                 </ModalFooter>
             </Modal>
             <Navbar className="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" color="faded" light expand="xs">
-                <Link href="/" passHref prefetch>
+                <Link href="/" passHref>
                     <NavbarBrand  className="mr-auto">
                         <b>pyrite</b> <img src="/static/images/logo.png" width="26" height="26" alt="Pyrite Hub Logo"></img> <b>hub</b>
                     </NavbarBrand>

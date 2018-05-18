@@ -16,7 +16,7 @@ export const Components = withComponents(({loading, components}: any ) => {
 			{components.map((component) => (
 				<div className="col-12 col-md-6 col-lg-4 mb-3" key={component._id}>
 					<div className="card">
-						<Link href={"/component/" + component.tag} prefetch>
+						<Link href={"/component/" + component.tag}>
 							<a>
 								<div className="card-body">
 									<h5 className="text-muted card-title">{component.tag}</h5>

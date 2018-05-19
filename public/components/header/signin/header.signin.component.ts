@@ -5,7 +5,7 @@ import headerSigninTemplate from './header.signin.template';
 interface SignInModalProps {
     toggle?: () => {};
     show?: boolean;
-    signin?: (variables: any) => {};
+    signin?: (variables: any) =>Promise<boolean>;
 }
 
 interface SignInModalState {
@@ -23,13 +23,16 @@ export class SignIn extends Component<SignInModalProps, SignInModalState> {
 
     signin(event) {
         event.preventDefault();
-
+        
         this.props.signin({
             variables: {
                 username: this.state.username,
                 password: this.state.password
-            }
-        });
+            },
+        })
+        .then((result) => {
+            if (result) location.reload();
+        });;
     }
 }
 

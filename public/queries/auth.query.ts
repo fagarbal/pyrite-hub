@@ -4,7 +4,7 @@ import { graphql, compose } from 'react-apollo';
 const SIGIN_MUTATION = gql`
   mutation ($username: String!, $password: String!) {
     signin(username: $username, password: $password) {
-      token
+      logged
     }
   }
 `;

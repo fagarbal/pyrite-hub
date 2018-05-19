@@ -17,9 +17,12 @@ export default function (this: Header) {
                     </NavbarBrand>
                 </Link>
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
-                        <button type="button" className="btn btn-primary" onClick={this.toggleModal}>{translation('header.signin')}</button>
-                    </NavItem>
+                    {this.props.user ?  
+                        <NavItem className="text-light">{this.props.user}</NavItem> :
+                        <NavItem>
+                            <button type="button" className="btn btn-primary" onClick={this.toggleModal}>{translation('header.signin')}</button>
+                        </NavItem>
+                    }
                 </Nav>
             </Navbar>
         </div>

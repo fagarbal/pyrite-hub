@@ -2,7 +2,7 @@ import { Component } from 'react';
 import dashboardTemplate from './dashboard.template';
 
 export interface IndexProps {
-	cards?: Array<any>;
+	user?: any;
 	modal?: boolean;
 }
 

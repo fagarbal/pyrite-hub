@@ -6,7 +6,12 @@ export class AuthResolver {
 	constructor(private readonly authService: AuthService) {}
 
 	@Mutation()
-	signin(_, { username, password }) {
+	signin(_, { username, password }, {session}) {
 		return this.authService.signin(username, password)
+		.then((user) => {
+			session.user = user.username;
+
+			return true;
+		});
 	}
 }

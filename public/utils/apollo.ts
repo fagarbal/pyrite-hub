@@ -17,6 +17,7 @@ function create() {
 			uri: process.env.API_URL + process.env.GRAPHQL_URL,
 			fetch,
 			headers: { compression: 'no' },
+			credentials: 'same-origin',
 		}),
 		cache: new InMemoryCache(),
 	});

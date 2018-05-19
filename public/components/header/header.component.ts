@@ -3,6 +3,7 @@ import headerTemplate from './header.template';
 
 interface PyriteHeadProps {
 	showModal?: boolean;
+	user: any;
 }
 
 interface PyriteHeadState {

@@ -1,7 +1,7 @@
-type AuthPayload {
-  token: String
+type AuthResponse {
+  logged: Boolean
 }
 
 type Mutation {
-	signin(username: String!, password: String!): AuthPayload
+	signin(username: String!, password: String!): AuthResponse
 }

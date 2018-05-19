@@ -1,6 +1,5 @@
 {
-    "watch": ["server/**/*.ts", "public/locales/*.json"],
-    "ext": "ts",
+    "watch": ["server/**/*.ts", "server/locales/*.graphql", "public/locales/*.json"],
     "ignore": ["src/**/*.spec.ts"],
     "execMap": {
       "ts": "NODE_ENV=development ts-node --compilerOptions '{\"module\":\"commonjs\"}'"

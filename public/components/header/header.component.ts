@@ -2,11 +2,11 @@ import { Component } from 'react';
 import headerTemplate from './header.template';
 
 interface PyriteHeadProps {
-	modal?: boolean;
+	showModal?: boolean;
 }
 
 interface PyriteHeadState {
-	modal?: boolean;
+	showModal?: boolean;
 	collapsed?: boolean;
 }
 
@@ -15,7 +15,7 @@ export class Header extends Component<PyriteHeadProps, PyriteHeadState> {
 		super(props);
 
 		this.state = {
-			modal: false,
+			showModal: false,
 			collapsed: true,
 		};
 
@@ -23,15 +23,9 @@ export class Header extends Component<PyriteHeadProps, PyriteHeadState> {
 		this.render = headerTemplate.bind(this);
 	}
 
-	componentDidMount() {
-		this.setState({
-			modal: this.props.modal || false,
-		});
-	}
-
 	toggleModal() {
 		this.setState({
-			modal: !this.state.modal,
+			showModal: !this.state.showModal,
 		});
 	}
 }

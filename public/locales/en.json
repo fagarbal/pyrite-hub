@@ -11,7 +11,12 @@
     "cancel": "Cancel",
     "loading": "Loading",
     "header": {
-        "loginMethod": "Login Method",
-        "login": "Log in"
+        "signinTitle": "Sign in to PyriteHub",
+        "signin": "Sign in",
+        "username": "Username or email address",
+        "password": "Password",
+        "forgot": "Forgot password?",
+        "signinWith": "Sign in with",
+        "or": "or"
     }
 }

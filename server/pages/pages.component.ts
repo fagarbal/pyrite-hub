@@ -13,7 +13,7 @@ export class PagesComponent {
 
 	async onModuleInit() {
 		this.next = next({
-			dev: ['production', 'preproduction'].includes(process.env.NODE_ENV),
+			dev: !['production', 'preproduction'].includes(process.env.NODE_ENV),
 			dir: 'public',
 		});
 

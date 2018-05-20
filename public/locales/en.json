@@ -17,6 +17,7 @@
         "password": "Password",
         "forgot": "Forgot password?",
         "signinWith": "Sign in with",
-        "or": "or"
+        "or": "or",
+        "errorPassword": "Incorrect username or password."
     }
 }

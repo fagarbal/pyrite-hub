@@ -13,6 +13,9 @@ export class AuthService {
 	signin(username, password) {
 		return this.userRepository.findOne({
             username, password
+        }).then((user) => {
+            if (!user) throw 'bad_username';
+            return user;
         });
 	}
 }

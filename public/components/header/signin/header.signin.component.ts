@@ -3,37 +3,38 @@ import { Component } from 'react';
 import headerSigninTemplate from './header.signin.template';
 
 interface SignInModalProps {
-    toggle?: () => {};
-    show?: boolean;
-    signin?: (variables: any) =>Promise<boolean>;
+	toggle?: () => {};
+	show?: boolean;
+	signin?: (variables: any) => Promise<boolean>;
 }
 
 interface SignInModalState {
-    username: string,
-    password: string
+	username: string;
+	password: string;
 }
 
 export class SignIn extends Component<SignInModalProps, SignInModalState> {
-    constructor(props) {
-        super(props);
+	constructor(props) {
+		super(props);
 
-        this.render = headerSigninTemplate.bind(this);
-        this.signin = this.signin.bind(this);
-    }
+		this.render = headerSigninTemplate.bind(this);
+		this.signin = this.signin.bind(this);
+	}
 
-    signin(event) {
-        event.preventDefault();
-        
-        this.props.signin({
-            variables: {
-                username: this.state.username,
-                password: this.state.password
-            },
-        })
-        .then((result) => {
-            if (result) location.reload();
-        });;
-    }
+	signin(event) {
+		event.preventDefault();
+
+		this.props
+			.signin({
+				variables: {
+					username: this.state.username,
+					password: this.state.password,
+				},
+			})
+			.then(result => {
+				if (result) location.reload();
+			});
+	}
 }
 
 export const SignInModal = withAuth(SignIn);

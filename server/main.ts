@@ -21,10 +21,10 @@ export async function bootstrap() {
 
 	app.use(
 		session({
-			genid: () =>  uuid(),
+			genid: () => uuid(),
 			secret: process.env.SESSION_TOKEN,
 			resave: false,
-			saveUninitialized: true
+			saveUninitialized: true,
 		}),
 	);
 

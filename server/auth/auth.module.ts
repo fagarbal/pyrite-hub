@@ -8,7 +8,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './auth.entity';
 
 @Module({
-	imports: [GithubModule, GitlabModule, BitbucketModule, TypeOrmModule.forFeature([User])],
+	imports: [
+		GithubModule,
+		GitlabModule,
+		BitbucketModule,
+		TypeOrmModule.forFeature([User]),
+	],
 	providers: [AuthResolver, AuthService],
 })
 export class AuthModule {}

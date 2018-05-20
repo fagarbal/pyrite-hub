@@ -22,7 +22,12 @@ export class GraphqlModule implements NestModule {
 		}
 
 		consumer
-			.apply(graphqlExpress((req: any) => ({ schema, context:{ session: req.session }})))
+			.apply(
+				graphqlExpress((req: any) => ({
+					schema,
+					context: { session: req.session },
+				})),
+			)
 			.forRoutes('/graphql');
 	}
 }

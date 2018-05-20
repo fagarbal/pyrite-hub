@@ -9,7 +9,7 @@ export class GithubStrategy extends Strategy {
 			{
 				clientID: process.env.GITHUB_CLIENT_ID,
 				clientSecret: process.env.GITHUB_CLIENT_SECRET,
-				callbackURL: process.env.API_URL + process.env.GITHUB_CALLBACK_URL,
+				callbackURL: process.env.API_URL + '/auth/github/callback',
 			},
 			async (accessToken, refreshToken, profile, done) =>
 				await this.verify(accessToken, refreshToken, profile, done),

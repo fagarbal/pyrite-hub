@@ -4,4 +4,5 @@ type AuthResponse {
 
 type Mutation {
 	signin(username: String!, password: String!): AuthResponse
+  logout: AuthResponse
 }

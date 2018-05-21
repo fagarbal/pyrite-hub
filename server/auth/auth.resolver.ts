@@ -15,4 +15,12 @@ export class AuthResolver {
 				return true;
 			});
 	}
+
+	@Mutation()
+	logout(_, {}, { session }) {
+		session.destroy();
+
+		return true;
+	}
+
 }

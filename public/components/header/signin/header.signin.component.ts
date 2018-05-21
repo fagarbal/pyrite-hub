@@ -6,6 +6,7 @@ interface SignInModalProps {
 	toggle?: () => {};
 	show?: boolean;
 	signin?: (variables: any) => Promise<boolean>;
+	logout?: () => Promise<boolean>;
 }
 
 interface SignInModalState {
@@ -24,6 +25,7 @@ export class SignIn extends Component<SignInModalProps, SignInModalState> {
 
         this.render = headerSigninTemplate.bind(this);
         this.signin = this.signin.bind(this);
+        this.logout = this.logout.bind(this);
         this.removeError = this.removeError.bind(this);
     }
     
@@ -49,7 +51,15 @@ export class SignIn extends Component<SignInModalProps, SignInModalState> {
                     error: true
                 });
             });
-	}
+    }
+    
+    logout() {
+        this.props
+			.logout()
+			.then(() => {
+				location.reload();
+            });
+    }
 }
 
 export const SignInModal = withAuth(SignIn);

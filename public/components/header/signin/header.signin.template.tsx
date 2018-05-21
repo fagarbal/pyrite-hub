@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, ModalHeader, ModalBody, ModalFooter, Alert } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { translation } from '@utils/i18n';
 import { SignIn } from './header.signin.component';
 
@@ -9,10 +9,13 @@ export default function (this: SignIn) {
             <ModalHeader>{translation('header.signinTitle')}</ModalHeader>
             <ModalBody className="ml-4 mr-4">
                 <form>
-                    {this.state.error ? 
-                        <Alert color="danger" isOpen={this.state.error} toggle={this.removeError}>
+                    {this.state.error ?
+                        <div className="alert alert-danger alert-dismissible">
+                            <button className="close" onClick={this.removeError}>
+                                <span>&times;</span>
+                            </button>
                             {translation('header.errorPassword')}
-                        </Alert> : null
+                        </div>: null
                     }
                     <div className="form-group">
                         <label><b>{translation('header.username')}</b></label>

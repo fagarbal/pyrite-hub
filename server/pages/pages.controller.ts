@@ -8,7 +8,7 @@ export class PagesController {
 	@Get('/')
 	dashboard(@Req() req, @Res() res, @Session() session) {
 		return this.pagesComponent.next.render(req, res, '/dashboard', {
-			user: session.user,
+			user: session.passport ? session.passport.user.username : null
 		});
 	}
 
@@ -16,7 +16,7 @@ export class PagesController {
 	overview(@Req() req, @Res() res, @Session() session) {
 		return this.pagesComponent.next.render(req, res, '/overview', {
 			name: req.params.name,
-			user: session.user,
+			user: session.passport ? session.passport.user.username : null
 		});
 	}
 

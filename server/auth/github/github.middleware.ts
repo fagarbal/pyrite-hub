@@ -5,7 +5,7 @@ import * as passport from 'passport';
 export class GithubMiddleware implements NestMiddleware {
 	resolve(): any {
 		return passport.authenticate('github', {
-			failureRedirect: '/?logged=error',
+			failureRedirect: '/',
 		});
 	}
 }

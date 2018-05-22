@@ -1,9 +1,9 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { translation } from '@utils/i18n';
-import { SignIn } from './header.signin.component';
+import { SignInModal } from './header.signin.component';
 
-export default function (this: SignIn) {
+export default function (this: SignInModal) {
     return (
         <Modal isOpen={this.props.show} centered={true} backdrop="static" fade={false}>
             <ModalHeader>{translation('header.signinTitle')}</ModalHeader>

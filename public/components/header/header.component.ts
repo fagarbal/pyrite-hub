@@ -1,9 +1,12 @@
 import { Component } from 'react';
 import headerTemplate from './header.template';
+import { withAuth } from '@queries/auth.query';
 
 interface PyriteHeadProps {
 	showModal?: boolean;
 	user: any;
+	signin?: (variables: any) => Promise<boolean>;
+	logout?: () => Promise<boolean>;
 }
 
 interface PyriteHeadState {
@@ -11,7 +14,7 @@ interface PyriteHeadState {
 	collapsed?: boolean;
 }
 
-export class Header extends Component<PyriteHeadProps, PyriteHeadState> {
+export class HeaderComponent extends Component<PyriteHeadProps, PyriteHeadState> {
 	constructor(props) {
 		super(props);
 
@@ -21,6 +24,7 @@ export class Header extends Component<PyriteHeadProps, PyriteHeadState> {
 		};
 
 		this.toggleModal = this.toggleModal.bind(this);
+		this.logout = this.logout.bind(this);
 		this.render = headerTemplate.bind(this);
 	}
 
@@ -29,4 +33,14 @@ export class Header extends Component<PyriteHeadProps, PyriteHeadState> {
 			showModal: !this.state.showModal,
 		});
 	}
+
+    logout() {
+        this.props
+			.logout()
+			.then(() => {
+				location.reload();
+            });
+    }
 }
+
+export const Header = withAuth(HeaderComponent);

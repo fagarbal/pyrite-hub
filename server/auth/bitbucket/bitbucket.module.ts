@@ -11,6 +11,6 @@ export class BitbucketModule implements NestModule {
 	configure(consumer: MiddlewareConsumer): void {
 		consumer
 			.apply(BitbucketMiddleware)
-			.forRoutes('/auth/bitbucket', '/auth/bitbucket/callback');
+			.forRoutes('/auth/bitbucket/');
 	}
 }

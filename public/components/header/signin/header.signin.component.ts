@@ -1,12 +1,10 @@
-import { withAuth } from '@queries/auth.query';
 import { Component } from 'react';
 import headerSigninTemplate from './header.signin.template';
 
 interface SignInModalProps {
-	toggle?: () => {};
+	toggle?: any;
 	show?: boolean;
-	signin?: (variables: any) => Promise<boolean>;
-	logout?: () => Promise<boolean>;
+	onSignIn?: (variables: any) => Promise<boolean>;
 }
 
 interface SignInModalState {
@@ -15,7 +13,7 @@ interface SignInModalState {
     error?: boolean;
 }
 
-export class SignIn extends Component<SignInModalProps, SignInModalState> {
+export class SignInModal extends Component<SignInModalProps, SignInModalState> {
 	constructor(props) {
 		super(props);
 
@@ -25,7 +23,6 @@ export class SignIn extends Component<SignInModalProps, SignInModalState> {
 
         this.render = headerSigninTemplate.bind(this);
         this.signin = this.signin.bind(this);
-        this.logout = this.logout.bind(this);
         this.removeError = this.removeError.bind(this);
     }
     
@@ -37,7 +34,7 @@ export class SignIn extends Component<SignInModalProps, SignInModalState> {
         event.preventDefault();
 
 		this.props
-			.signin({
+			.onSignIn({
 				variables: {
 					username: this.state.username,
 					password: this.state.password,
@@ -47,19 +44,7 @@ export class SignIn extends Component<SignInModalProps, SignInModalState> {
 				if (result) location.reload();
             })
             .catch(() => {
-                this.setState({
-                    error: true
-                });
-            });
-    }
-    
-    logout() {
-        this.props
-			.logout()
-			.then(() => {
-				location.reload();
+                this.setState({ error: true });
             });
     }
 }
-
-export const SignInModal = withAuth(SignIn);

@@ -9,10 +9,10 @@ import { User } from './auth.entity';
 
 @Module({
 	imports: [
+		TypeOrmModule.forFeature([User]),
 		GithubModule,
 		GitlabModule,
 		BitbucketModule,
-		TypeOrmModule.forFeature([User]),
 	],
 	providers: [AuthResolver, AuthService],
 })

@@ -1,8 +1,4 @@
-type AuthResponse {
-  logged: Boolean
-}
-
 type Mutation {
-	signin(username: String!, password: String!): AuthResponse
-  logout: AuthResponse
+	signin(username: String!, password: String!): Boolean
+  logout: Boolean
 }

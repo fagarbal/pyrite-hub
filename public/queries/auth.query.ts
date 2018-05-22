@@ -3,17 +3,13 @@ import { graphql, compose } from 'react-apollo';
 
 const SIGNIN_MUTATION = gql`
 	mutation($username: String!, $password: String!) {
-    signin(username: $username, password: $password) {
-      logged
-    }
+    signin(username: $username, password: $password)
   }
 `;
 
 const LOGOUT_MUTATION = gql`
 	mutation {
-    logout {
-      logged
-    }
+    logout
   }
 `;
 

@@ -13,7 +13,7 @@ export class ExpressSessionMiddleware implements NestMiddleware {
             genid: () => uuid(),
             secret: process.env.SESSION_TOKEN,
             resave: false,
-            saveUninitialized: true,
+            saveUninitialized: false,
             store: new MongoStore({
                 url: process.env.MONGODB_URI,
                 mongoOptions: {

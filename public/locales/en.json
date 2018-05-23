@@ -19,6 +19,6 @@
         "signinWith": "Sign in with",
         "or": "or",
         "errorPassword": "Incorrect username or password.",
-        "logout": "Log out"
+        "logout": "Sign out"
     }
 }

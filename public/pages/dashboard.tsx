@@ -5,6 +5,7 @@ import { Header } from '@components/header/header.component';
 
 export default class extends Component<any, any> {
     static getInitialProps ({ query }) {
+        console.log(query)
 		return query;
     }
 
